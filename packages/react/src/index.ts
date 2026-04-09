@@ -1,0 +1,10 @@
+export { Icon } from './Icon';
+export type { IconComponent, IconComponentProps } from './types';
+export { OakleyCart } from './icons/OakleyCart';
+export { FaceNoGenderHeart } from './icons/FaceNoGenderHeart';
+export { Home } from './icons/Home';
+export { ImagePlaceholder } from './icons/ImagePlaceholder';
+export { Backpack } from './icons/Backpack';
+export { SunLight } from './icons/SunLight';
+export { ApplePay } from './icons/ApplePay';
+export { Instagram } from './icons/Instagram';

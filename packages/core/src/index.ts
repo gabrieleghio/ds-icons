@@ -1,0 +1,10 @@
+export type { IconSize, IconDefinition, StandardIconDefinition, MultisizeIconDefinition } from './types';
+export { getClosestSize } from './utils';
+export { OakleyCart } from './icons/brands/standard/OakleyCart';
+export { FaceNoGenderHeart } from './icons/faces/standard/FaceNoGenderHeart';
+export { Home } from './icons/functional-generic/standard/Home';
+export { ImagePlaceholder } from './icons/functional-generic/standard/ImagePlaceholder';
+export { Backpack } from './icons/functional-generic/multisize/Backpack';
+export { SunLight } from './icons/glasses/standard/SunLight';
+export { ApplePay } from './icons/payment-flags/standard/ApplePay';
+export { Instagram } from './icons/social-media/standard/Instagram';

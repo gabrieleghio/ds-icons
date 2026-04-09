@@ -1,0 +1,9 @@
+export { renderIcon } from './renderIcon';
+export { renderOakleyCart } from './icons/OakleyCart';
+export { renderFaceNoGenderHeart } from './icons/FaceNoGenderHeart';
+export { renderHome } from './icons/Home';
+export { renderImagePlaceholder } from './icons/ImagePlaceholder';
+export { renderBackpack } from './icons/Backpack';
+export { renderSunLight } from './icons/SunLight';
+export { renderApplePay } from './icons/ApplePay';
+export { renderInstagram } from './icons/Instagram';

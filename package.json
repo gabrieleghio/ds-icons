@@ -1,0 +1,22 @@
+{
+  "name": "@gabrieleghio/icons",
+  "private": true,
+  "scripts": {
+    "generate": "ts-node scripts/generate-wrappers.ts",
+    "generate:metadata": "ts-node scripts/generate-icons-metadata.ts",
+    "build": "pnpm run generate:metadata && pnpm -r run build",
+    "build:react": "pnpm --filter @gabrieleghio/icons-react run build",
+    "build:lit": "pnpm --filter @gabrieleghio/icons-lit run build",
+    "dev": "pnpm -r run dev",
+    "showcase": "pnpm run generate:metadata && pnpm --filter @gabrieleghio/icons-showcase run dev"
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.0.0",
+    "@rollup/plugin-typescript": "^11.0.0",
+    "@types/node": "^25.5.2",
+    "rollup": "^4.0.0",
+    "ts-node": "^10.0.0",
+    "tslib": "^2.6.0",
+    "typescript": "^5.0.0"
+  }
+}

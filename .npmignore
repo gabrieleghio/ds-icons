@@ -1,0 +1,55 @@
+# Source files
+src/
+*.ts
+!*.d.ts
+
+# Build artifacts
+build/
+*.tsbuildinfo
+
+# Development
+dev/
+.vite/
+storybook-static/
+
+# Configuration files
+tsconfig.json
+rollup.config.js
+vite.config.js
+
+# Testing
+__tests__/
+*.test.ts
+*.spec.ts
+.vitest/
+coverage/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Version control
+.git/
+.gitignore
+.github/
+
+# CI/CD
+.github/
+.gitlab-ci.yml
+
+# Package management
+pnpm-lock.yaml
+yarn.lock
+package-lock.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Misc
+.env*
+.npmrc
+.editorconfig
+CONTRIBUTING.md

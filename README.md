@@ -292,6 +292,103 @@ When contributing to this project:
 4. Commit with clear, descriptive messages
 5. Push and create a Pull Request
 
+## Publishing Packages
+
+The React and Lit packages are configured as npm scoped packages under `@gabrieleghio` and can be published as private packages.
+
+**For detailed publishing instructions, see [PUBLISHING.md](./PUBLISHING.md)**
+
+### Prerequisites
+
+1. **npm Account** - You need an npm account with access to the `@gabrieleghio` scope
+2. **Authentication Token** - Get your npm token from https://www.npmjs.com/settings/~/tokens
+
+### Setup Local Authentication
+
+1. **Create or update `~/.npmrc`** in your home directory:
+
+   ```
+   //registry.npmjs.org/:_authToken=YOUR_NPM_TOKEN_HERE
+   ```
+
+   Replace `YOUR_NPM_TOKEN_HERE` with your actual token.
+
+2. **Verify authentication**:
+
+   ```bash
+   npm whoami
+   ```
+
+### Publishing a Package
+
+**For React package:**
+
+```bash
+cd packages/react
+npm version patch  # or minor/major
+npm publish
+cd ../..
+```
+
+**For Lit package:**
+
+```bash
+cd packages/lit
+npm version patch  # or minor/major
+npm publish
+cd ../..
+```
+
+### Automated Publishing (CI/CD)
+
+For automated publishing via GitHub Actions or other CI/CD:
+
+1. **Set NPM_TOKEN secret** in your repository settings
+2. **Create a publish workflow** that:
+   - Builds all packages: `pnpm build`
+   - Bumps versions: `npm version patch`
+   - Publishes: `npm publish`
+
+Example GitHub Actions workflow:
+
+```yaml
+name: Publish Packages
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          registry-url: 'https://registry.npmjs.org'
+      
+      - run: pnpm install
+      - run: pnpm build
+      
+      - run: npm publish --workspace=packages/react
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      
+      - run: npm publish --workspace=packages/lit
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+```
+
+### Package Configuration
+
+Both packages include:
+- ✅ **Metadata** - Description, keywords, repository info
+- ✅ **Entry points** - main, module, types, exports
+- ✅ **Build automation** - `prepublishOnly` script runs build before publish
+- ✅ **File inclusion** - Only dist/, README.md, LICENSE are published
+
 ## Troubleshooting
 
 ### Missing Dependencies

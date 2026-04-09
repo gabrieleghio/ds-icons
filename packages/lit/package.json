@@ -1,6 +1,21 @@
 {
   "name": "@gabrieleghio/icons-lit",
   "version": "0.0.1",
+  "description": "Lit component library for @gabrieleghio/icons",
+  "author": "gabrieleghio",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gabrieleghio/ds-icons.git",
+    "directory": "packages/lit"
+  },
+  "keywords": [
+    "icons",
+    "lit",
+    "web-components",
+    "svg",
+    "design-system"
+  ],
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -11,14 +26,29 @@
       "types": "./dist/index.d.ts"
     }
   },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "sideEffects": false,
   "scripts": {
-    "build": "rollup -c rollup.config.js"
+    "build": "rollup -c rollup.config.js",
+    "prepublishOnly": "pnpm run build"
   },
   "dependencies": {
     "@gabrieleghio/icons-core": "workspace:*"
   },
   "peerDependencies": {
     "lit": "^3.0.0"
+  },
+  "peerDependenciesMeta": {
+    "lit": {
+      "optional": false
+    }
+  },
+  "publishConfig": {
+    "access": "restricted",
+    "registry": "https://npm.pkg.github.com/"
   }
 }

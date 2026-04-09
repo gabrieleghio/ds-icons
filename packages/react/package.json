@@ -1,6 +1,21 @@
 {
   "name": "@gabrieleghio/icons-react",
   "version": "0.0.1",
+  "description": "React component library for @gabrieleghio/icons",
+  "author": "gabrieleghio",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gabrieleghio/ds-icons.git",
+    "directory": "packages/react"
+  },
+  "keywords": [
+    "icons",
+    "react",
+    "components",
+    "svg",
+    "design-system"
+  ],
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -11,9 +26,15 @@
       "types": "./dist/index.d.ts"
     }
   },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "sideEffects": false,
   "scripts": {
-    "build": "rollup -c rollup.config.js"
+    "build": "rollup -c rollup.config.js",
+    "prepublishOnly": "pnpm run build"
   },
   "dependencies": {
     "@gabrieleghio/icons-core": "workspace:*"
@@ -21,11 +42,20 @@
   "peerDependencies": {
     "react": "^18.0.0"
   },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": false
+    }
+  },
   "devDependencies": {
     "@types/react": "^18.0.0",
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3"
+  },
+  "publishConfig": {
+    "access": "restricted",
+    "registry": "https://npm.pkg.github.com/"
   }
 }

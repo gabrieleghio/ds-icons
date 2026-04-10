@@ -7,9 +7,17 @@ export default {
     dir: "dist",
     format: "esm",
     preserveModules: true,
-    preserveModulesRoot: "src",
+    preserveModulesRoot: "../../packages/lit/src",
     sourcemap: true,
   },
-  external: ["lit", "lit/directives/unsafe-html.js", "@gabrieleghio/icons-core"],
-  plugins: [nodeResolve(), typescript({ tsconfig: "./tsconfig.json" })],
+  external: ["lit", "lit/directives/unsafe-html.js"],
+  plugins: [
+    nodeResolve(),
+    typescript({
+      tsconfig: "./tsconfig.json",
+      compilerOptions: {
+        rootDir: "../../",
+      },
+    }),
+  ],
 };

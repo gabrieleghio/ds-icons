@@ -1,6 +1,6 @@
 {
   "name": "@gabrieleghio/icons-react",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "description": "React component library for @gabrieleghio/icons",
   "author": "gabrieleghio",
   "license": "MIT",
@@ -18,12 +18,12 @@
   ],
   "main": "./dist/index.js",
   "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "types": "./dist/packages/react/src/index.d.ts",
   "type": "module",
   "exports": {
     ".": {
       "import": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "types": "./dist/packages/react/src/index.d.ts"
     }
   },
   "files": [
@@ -35,9 +35,6 @@
   "scripts": {
     "build": "rollup -c rollup.config.js",
     "prepublishOnly": "pnpm run build"
-  },
-  "dependencies": {
-    "@gabrieleghio/icons-core": "workspace:*"
   },
   "peerDependencies": {
     "react": "^18.0.0"

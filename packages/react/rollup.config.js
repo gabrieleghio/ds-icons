@@ -7,9 +7,17 @@ export default {
     dir: "dist",
     format: "esm",
     preserveModules: true,
-    preserveModulesRoot: "src",
+    preserveModulesRoot: "../../packages/react/src",
     sourcemap: true,
   },
-  external: ["react", "react/jsx-runtime", "@gabrieleghio/icons-core"],
-  plugins: [nodeResolve(), typescript({ tsconfig: "./tsconfig.json" })],
+  external: ["react", "react/jsx-runtime"],
+  plugins: [
+    nodeResolve(),
+    typescript({
+      tsconfig: "./tsconfig.json",
+      compilerOptions: {
+        rootDir: "../../",
+      },
+    }),
+  ],
 };

@@ -1,13 +1,25 @@
 {
   "name": "@gabrieleghio/icons-core",
   "version": "0.0.1",
-  "private": true,
-  "main": "./src/index.ts",
-  "types": "./src/index.ts",
+  "description": "Static SVG assets for @gabrieleghio/icons",
+  "files": [
+    "dist/svg"
+  ],
+  "publishConfig": {
+    "access": "restricted",
+    "registry": "https://npm.pkg.github.com/"
+  },
   "exports": {
-    ".": {
-      "import": "./src/index.ts",
-      "types": "./src/index.ts"
-    }
+    "./ApplePay_16.svg": "./dist/svg/ApplePay_16.svg",
+    "./ApplePay_24.svg": "./dist/svg/ApplePay_24.svg",
+    "./ApplePay_48.svg": "./dist/svg/ApplePay_48.svg",
+    "./Backpack_24.svg": "./dist/svg/Backpack_24.svg",
+    "./Backpack_32.svg": "./dist/svg/Backpack_32.svg",
+    "./FaceNoGenderHeart_32.svg": "./dist/svg/FaceNoGenderHeart_32.svg",
+    "./Home_32.svg": "./dist/svg/Home_32.svg",
+    "./ImagePlaceholder_32.svg": "./dist/svg/ImagePlaceholder_32.svg",
+    "./Instagram_32.svg": "./dist/svg/Instagram_32.svg",
+    "./OakleyCart_32.svg": "./dist/svg/OakleyCart_32.svg",
+    "./SunLight_32.svg": "./dist/svg/SunLight_32.svg"
   }
 }

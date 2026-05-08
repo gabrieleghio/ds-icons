@@ -1,11 +1,9 @@
-import type { IconSize } from "@gabrieleghio/icons-core";
-import type React from "react";
+import React from 'react';
 
-export interface IconComponentProps {
-  size?: IconSize;
+export type IconSize = 16 | 20 | 24 | 32 | 40 | 48;
+
+export interface IconProps {
   color?: string;
   className?: string;
   style?: React.CSSProperties;
 }
-
-export type IconComponent = React.ComponentType<IconComponentProps>;

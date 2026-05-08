@@ -1,429 +1,244 @@
-# @gabrieleghio/icons
+# DS Icons
 
-A comprehensive design system icons library with support for multiple frameworks (React, Lit) and core SVG assets.
+A comprehensive design system for SVG icons with support for **React**, **Lit Web Components**, and static SVG assets.
 
-## Project Structure
+## 📦 Packages
 
-This is a monorepo using [pnpm workspaces](https://pnpm.io/workspaces). It contains the following packages:
+This monorepo contains three main icon packages:
 
-```
-packages/
-├── core/       # Core icon assets and utilities
-├── react/      # React component wrapper for icons
-├── lit/        # Lit component wrapper for icons
-└── showcase/   # Showcase application for browsing icons
-```
+| Package | Description | Framework |
+|---------|-------------|-----------|
+| [`@gabrieleghio/icons-react`](./packages/react) | React component library for icons | React 18+ |
+| [`@gabrieleghio/icons-lit`](./packages/lit) | Web Components library for icons | Lit 3+ |
+| [`@gabrieleghio/icons-core`](./packages/core) | Optimized SVG assets | None (static SVG) |
 
-## Prerequisites
+Plus a showcase application for browsing and testing icons.
+
+## ✨ Features
+
+- ✅ **Framework agnostic** - React, Lit, or raw SVG
+- ✅ **Declarative components** - Easy to use and customize
+- ✅ **Optimized SVGs** - SVGO compression for minimal payload
+- ✅ **Customizable** - Color, className, style props
+- ✅ **Tree-shakeable** - Only import what you use
+- ✅ **TypeScript-first** - Full type safety
+- ✅ **Accessible** - ARIA attributes and semantic HTML
+- ✅ **Multi-category** - Generic, brands, social, payment-flags, faces, glasses
+- ✅ **Multiple sizes** - 16px, 20px, 24px, 32px, 40px, 48px
+- ✅ **Fully tested** - 68 tests with 95.85% coverage
+
+## 🚀 Quick Start
+
+### Prerequisites
 
 - **Node.js** ≥ 18.0.0
 - **pnpm** ≥ 8.0.0 (install with `npm install -g pnpm`)
 
-## Getting Started
-
 ### Installation
 
 ```bash
-# Install dependencies across all packages
 pnpm install
 ```
 
-### Development
+## 🛠️ Development
 
-Start the development environment:
+### Start Dev Environment
 
 ```bash
-# Run dev servers in all packages
+# Run dev servers for all packages
 pnpm dev
 
-# Or run the showcase app specifically
+# Or run just the showcase
 pnpm showcase
 ```
 
-The showcase will typically run on `http://localhost:5173` (or the next available port).
+The showcase runs on `http://localhost:5173` (or next available port).
 
-## Available Scripts
+## 📋 Available Scripts
 
-### Root Level
+### Generation & Building
 
 | Script | Description |
 |--------|-------------|
-| `pnpm install` | Install dependencies across all packages |
-| `pnpm dev` | Start development servers for all packages |
-| `pnpm build` | Generate metadata and build all packages |
-| `pnpm generate` | Generate icon component wrappers |
-| `pnpm generate:metadata` | Generate icon metadata file |
-| `pnpm showcase` | Run the showcase application |
-| `pnpm build:react` | Build only the React package |
-| `pnpm build:lit` | Build only the Lit package |
+| `pnpm generate` | Regenerate all components from source SVGs |
+| `pnpm generate:react` | Generate only React components |
+| `pnpm generate:lit` | Generate only Lit components |
+| `pnpm generate:svg` | Optimize SVGs only |
+| `pnpm generate:index` | Generate index files only |
+| `pnpm build` | Full build: generate + build all packages |
+| `pnpm build:react` | Build only React package |
+| `pnpm build:lit` | Build only Lit package |
 
-### Package-Specific Scripts
+### Testing & Development
 
-To run a script in a specific package:
+| Script | Description |
+|--------|-------------|
+| `pnpm test` | Run unit and integration tests |
+| `pnpm test:watch` | Run tests in watch mode |
+| `pnpm test:coverage` | Run tests with coverage report |
+| `pnpm dev` | Start dev servers for all packages |
+| `pnpm showcase` | Start showcase application |
 
-```bash
-pnpm --filter @gabrieleghio/icons-react run build
-pnpm --filter @gabrieleghio/icons-lit run build
-pnpm --filter @gabrieleghio/icons-showcase run dev
+## 📂 Project Structure
+
+```
+ds-icons/
+├── raw/                          # Source SVGs from Figma
+│   ├── generic/                  # Generic icons
+│   ├── brands/                   # Brand logos
+│   ├── social/                   # Social media icons
+│   ├── payment-flags/            # Payment & flags
+│   ├── faces/                    # Faces & avatars
+│   └── glasses/                  # Glasses & eyewear
+├── scripts/                      # Generation pipeline
+│   ├── generate-react.ts         # React component generation
+│   ├── generate-lit.ts           # Lit component generation
+│   ├── generate-static-svg.ts    # SVG optimization
+│   ├── generate-index.ts         # Index file generation
+│   └── __tests__/                # 68 tests (95.85% coverage)
+├── packages/
+│   ├── react/                    # @gabrieleghio/icons-react
+│   ├── lit/                      # @gabrieleghio/icons-lit
+│   ├── core/                     # @gabrieleghio/icons-core
+│   └── showcase/                 # Demo application
+└── pnpm-workspace.yaml           # Monorepo configuration
 ```
 
-## Build Process
+## 🔄 Generation Pipeline
 
-The build process involves:
+```
+SVG Sources (raw/)
+  ↓
+generate-react.ts    → React components (packages/react/src/)
+generate-lit.ts      → Lit render functions (packages/lit/src/)
+generate-static-svg  → Optimized SVGs (packages/core/dist/svg/)
+generate-index.ts    → Export index files
+  ↓
+Built packages ready for publishing
+```
 
-1. **Metadata Generation** - Scans icon files and generates metadata
-2. **Component Generation** - Creates framework-specific component wrappers
-3. **Package Build** - Builds each package with Rollup and TypeScript
+## 📥 Adding New Icons
+
+### Step 1: Prepare SVG Files
+
+Export icons from Figma and organize in `raw/[category]/[IconName]/`:
+
+```
+raw/generic/Home/
+  ├── Home_16.svg
+  ├── Home_24.svg
+  ├── Home_32.svg
+  └── Home_48.svg
+
+raw/brands/ApplePay/
+  ├── ApplePay_16.svg
+  ├── ApplePay_24.svg
+  └── ApplePay_48.svg
+```
+
+**Naming Convention:**
+- **Category folder**: lowercase (generic, brands, social, payment-flags, faces, glasses)
+- **Icon folder**: PascalCase (Home, ApplePay, SunLight, etc.)
+- **SVG file**: `{IconName}_{size}.svg` (e.g., Home_32.svg)
+
+### Step 2: Generate Components
 
 ```bash
+pnpm generate
+```
+
+This automatically:
+- Generates React components in `packages/react/src/[category]/`
+- Generates Lit render functions in `packages/lit/src/[category]/`
+- Optimizes SVGs to `packages/core/dist/svg/`
+- Updates index.ts files with new exports
+
+### Step 3: Verify & Test
+
+```bash
+# Test the generation
+pnpm test:coverage
+
+# View in showcase
+pnpm showcase
+
+# Build all packages
 pnpm build
 ```
 
-## Git & Version Control
+### SVG Guidelines
 
-### .gitignore Configuration
+- **Quality**: Clean, well-optimized SVGs
+- **ViewBox**: Use `0 0 [size] [size]` (e.g., `0 0 32 32`)
+- **Stroke Width**: Consistent (typically 1.5-2)
+- **Rounding**: Appropriate border-radius (1.5-2 for crisp edges)
+- **Testing**: Preview at multiple sizes for clarity
 
-The repository includes a comprehensive `.gitignore` that tracks:
+## 🧪 Testing
 
-- **Dependencies**: `node_modules/`, pnpm debug logs
-- **Build outputs**: `dist/`, `build/`, TypeScript build info
-- **IDE files**: VSCode, JetBrains, Sublime settings
-- **OS files**: `.DS_Store`, `Thumbs.db`
-- **Environment variables**: `.env` files
-- **Logs**: `*.log` files
+The project includes comprehensive test coverage:
 
-### Important Notes
+- **Unit Tests** (46): Pure function tests for all generation logic
+- **Integration Tests** (22): Full pipeline testing with temporary directories
+- **Coverage**: 95.85% statements, 100% function coverage
 
-- **`node_modules/` are completely ignored by git** - Never commit node_modules directories
-- **Always run `pnpm install`** after pulling to ensure dependencies are up-to-date
-- The `.gitignore` uses UTF-8 encoding - do not edit it with tools that change the encoding
-
-## Project Layout
-
-```
-.
-├── packages/                    # Monorepo packages
-├── scripts/                     # Build and generation scripts
-├── tsconfig.json               # Root TypeScript configuration
-├── tsconfig.base.json          # Base TypeScript configuration
-├── pnpm-workspace.yaml         # pnpm workspace configuration
-├── pnpm-lock.yaml              # Locked dependency versions
-└── .gitignore                  # Git ignore rules
+```bash
+pnpm test              # Run all tests
+pnpm test:watch        # Watch mode
+pnpm test:coverage     # Coverage report
 ```
 
-## Adding New Icons
+## 📦 Publishing
 
-Icons are defined in the core package and can be of three types: **standard**, **multisize**, or **raster**. Choose the type based on your icon's needs.
+Packages are configured for GitHub Packages under `@gabrieleghio`:
 
-### Icon Types
-
-#### Standard Icons
-A single SVG design that scales uniformly across all sizes (16, 20, 24, 32, 40, 48px).
-
-**Use when:**
-- The icon design works well at all sizes
-- You want minimal file size
-- Simple geometric icons
-
-**Example:**
-```typescript
-export const checkIcon: StandardIconDefinition = {
-  type: "standard",
-  viewBox: "0 0 24 24",
-  path: `<path d="M13.9482 28... /><path>...</path>`
-};
+```bash
+pnpm --filter @gabrieleghio/icons-react publish
+pnpm --filter @gabrieleghio/icons-lit publish
+pnpm --filter @gabrieleghio/icons-core publish
 ```
 
-#### Multisize Icons
-Different SVG designs optimized for specific sizes. Each size has its own `viewBox` and `path`.
+**Current Versions:**
+- React: 0.0.4
+- Lit: 0.0.4
+- Core: 0.0.1
 
-**Use when:**
-- The icon needs different proportions at different sizes
-- Small sizes need simpler designs to remain readable
-- Pixel-perfect alignment is required at specific sizes
+## 🔗 Package Documentation
 
-**Example:**
-```typescript
-export const detailIcon: MultisizeIconDefinition = {
-  type: "multisize",
-  variants: {
-    16: {
-      viewBox: "0 0 16 16",
-      path: `<path d="M13.9482 28... /><path>...</path>`
-    },
-    24: {
-      viewBox: "0 0 24 24",
-      path: `<path d="M13.9482 28... /><path>...</path>`
-    }
-  }
-};
-```
+For detailed information about each package, see:
 
-#### Raster Icons
-Bitmap-based icons (PNG, optimized SVG as base64) for each size. Useful for complex illustrations.
+- [React Package](./packages/react/README.md) - React components
+- [Lit Package](./packages/lit/README.md) - Web Components
+- [Core Package](./packages/core/README.md) - Static SVG assets
 
-**Use when:**
-- Icons contain complex gradients or textures
-- Vector rendering doesn't work well
-- You have pre-existing raster assets
+## 🤝 Contributing
 
-**Example:**
-```typescript
-export const illustrationIcon: RasterIconDefinition = {
-  type: "raster",
-  variants: {
-    24: {
-      viewBox: "0 0 24 24",
-      width: 24,
-      height: 24,
-      content: `<rect width="23 ... </defs>` // base64 encoded
-    },
-    32: {
-      viewBox: "0 0 32 32",
-      width: 32,
-      height: 32,
-      content: `<rect width="23 ... </defs>`
-    }
-  }
-};
-```
+When contributing:
 
-### Available Icon Sizes
-
-Icons can be defined for any of these sizes:
-- **16px** - Small UI icons (list items, badges)
-- **20px** - Default UI icons (buttons, inputs)
-- **24px** - Medium icons (headers, cards)
-- **32px** - Large icons (hero sections)
-- **40px** - Extra large icons
-- **48px** - Extra extra large icons
-
-Not all sizes need to be defined for multisize or raster icons—use only what you need.
-
-### Adding an Icon Step-by-Step
-
-1. **Create the icon definition** in `packages/core/src/icons/` (or appropriate subdirectory):
-
-   ```typescript
-   // packages/core/src/icons/my-icon.ts
-   import { StandardIconDefinition } from "../types";
-
-   export const myIcon: StandardIconDefinition = {
-     type: "standard",
-     viewBox: "0 0 24 24",
-     path: `<path d="M13.9482 28... /><path>...</path>`
-   };
-   ```
-
-2. **Export from the main index and build the wrappers**:
-
-   ```bash
-   pnpm build
-   ```
-
-3. **Generate metadata** to create component wrappers:
-
-   ```bash
-   pnpm generate:metadata
-   pnpm generate
-   ```
-
-4. **Test in the showcase**:
-
-   ```bash
-   pnpm showcase
-   ```
-
-5. **Verify in React/Lit packages**:
-   - Import the icon in your component
-   - The generated wrapper components will be available automatically
-
-### Icon Design Guidelines
-
-- **SVG Quality**: Use clean, well-optimized SVGs
-- **Consistent ViewBox**: Use `0 0 24 24` for standard icons (or appropriate size for multisize)
-- **Stroke Width**: Keep consistent (usually 1.5-2)
-- **Rounding**: Use appropriate border-radius (typically 1.5-2 for crisp edges)
-- **Naming**: Use descriptive, kebab-case names (e.g., `arrow-up`, `check-circle`)
-- **Testing**: Always preview at multiple sizes to ensure clarity
-
-### Common Icon Patterns
-
-**Arrow icons**: Consider 8-directional variants (up, down, left, right, up-left, etc.)
-
-**State icons**: Create pairs (e.g., `eye`, `eye-off` or `star`, `star-filled`)
-
-**Action icons**: Use consistent styling with other action icons (delete, edit, share, etc.)
-
-## Development Guidelines
+1. Create a feature branch: `git checkout -b feature/your-feature`
+2. Make changes and test locally: `pnpm test` and `pnpm build`
+3. Commit with clear messages
+4. Push and create a Pull Request
 
 ### Before Committing
 
-1. Ensure all packages build successfully:
-   ```bash
-   pnpm build
-   ```
-
-2. Test your changes locally:
-   ```bash
-   pnpm dev
-   ```
-
-3. Never commit:
-   - `node_modules/` directories
-   - Build artifacts (`dist/`, `build/`)
-   - IDE-specific files (use `.gitignore`)
-   - Untracked dependencies
-
-### Adding a New Package
-
-1. Create a new directory under `packages/`
-2. Add a `package.json` with proper naming convention
-3. Update the package exports if needed
-4. Run `pnpm install` to register it in the workspace
-
-## Contributing
-
-When contributing to this project:
-
-1. Create a feature branch: `git checkout -b feature/your-feature`
-2. Make your changes and test locally
-3. Build to ensure no errors: `pnpm build`
-4. Commit with clear, descriptive messages
-5. Push and create a Pull Request
-
-## Publishing Packages
-
-The React and Lit packages are configured as npm scoped packages under `@gabrieleghio` and can be published as private packages.
-
-**For detailed publishing instructions, see [PUBLISHING.md](./PUBLISHING.md)**
-
-### Prerequisites
-
-1. **npm Account** - You need an npm account with access to the `@gabrieleghio` scope
-2. **Authentication Token** - Get your npm token from https://www.npmjs.com/settings/~/tokens
-
-### Setup Local Authentication
-
-1. **Create or update `~/.npmrc`** in your home directory:
-
-   ```
-   //registry.npmjs.org/:_authToken=YOUR_NPM_TOKEN_HERE
-   ```
-
-   Replace `YOUR_NPM_TOKEN_HERE` with your actual token.
-
-2. **Verify authentication**:
-
-   ```bash
-   npm whoami
-   ```
-
-### Publishing a Package
-
-**For React package:**
-
 ```bash
-cd packages/react
-npm version patch  # or minor/major
-npm publish
-cd ../..
+pnpm test           # Ensure all tests pass
+pnpm build          # Ensure packages build
+pnpm showcase       # Test in showcase (optional)
 ```
 
-**For Lit package:**
+Never commit:
+- `node_modules/` directories
+- Build artifacts (`dist/`, `build/`)
+- IDE-specific files
+- `.env` files
 
-```bash
-cd packages/lit
-npm version patch  # or minor/major
-npm publish
-cd ../..
-```
+## 📄 License
 
-### Automated Publishing (CI/CD)
+MIT © gabrieleghio
 
-For automated publishing via GitHub Actions or other CI/CD:
+## 🔗 Links
 
-1. **Set NPM_TOKEN secret** in your repository settings
-2. **Create a publish workflow** that:
-   - Builds all packages: `pnpm build`
-   - Bumps versions: `npm version patch`
-   - Publishes: `npm publish`
-
-Example GitHub Actions workflow:
-
-```yaml
-name: Publish Packages
-on:
-  push:
-    tags:
-      - 'v*'
-
-jobs:
-  publish:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: pnpm/action-setup@v2
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-          registry-url: 'https://registry.npmjs.org'
-      
-      - run: pnpm install
-      - run: pnpm build
-      
-      - run: npm publish --workspace=packages/react
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-      
-      - run: npm publish --workspace=packages/lit
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-```
-
-### Package Configuration
-
-Both packages include:
-- ✅ **Metadata** - Description, keywords, repository info
-- ✅ **Entry points** - main, module, types, exports
-- ✅ **Build automation** - `prepublishOnly` script runs build before publish
-- ✅ **File inclusion** - Only dist/, README.md, LICENSE are published
-
-## Troubleshooting
-
-### Missing Dependencies
-
-If you see errors about missing modules after pulling:
-
-```bash
-# Clean install
-rm -rf node_modules pnpm-lock.yaml
-pnpm install
-```
-
-### Build Failures
-
-Ensure TypeScript and build tools are properly installed:
-
-```bash
-pnpm install
-pnpm build
-```
-
-### Showcase Not Running
-
-Try clearing cache and reinstalling:
-
-```bash
-pnpm clean
-pnpm install
-pnpm showcase
-```
-
-## License
-
-[Add your license information here]
-
-## Contact
-
-[Add contact information here]
+- [GitHub Repository](https://github.com/gabrieleghio/ds-icons)
+- [NPM Organization](https://www.npmjs.com/org/gabrieleghio)

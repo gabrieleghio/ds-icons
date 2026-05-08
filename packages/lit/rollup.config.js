@@ -7,7 +7,7 @@ export default {
     dir: "dist",
     format: "esm",
     preserveModules: true,
-    preserveModulesRoot: "../../packages/lit/src",
+    preserveModulesRoot: "src",
     sourcemap: true,
   },
   external: ["lit", "lit/directives/unsafe-html.js"],
@@ -15,9 +15,6 @@ export default {
     nodeResolve(),
     typescript({
       tsconfig: "./tsconfig.json",
-      compilerOptions: {
-        rootDir: "../../",
-      },
     }),
   ],
 };

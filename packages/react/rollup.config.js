@@ -7,7 +7,7 @@ export default {
     dir: "dist",
     format: "esm",
     preserveModules: true,
-    preserveModulesRoot: "../../packages/react/src",
+    preserveModulesRoot: "src",
     sourcemap: true,
   },
   external: ["react", "react/jsx-runtime"],
@@ -15,9 +15,6 @@ export default {
     nodeResolve(),
     typescript({
       tsconfig: "./tsconfig.json",
-      compilerOptions: {
-        rootDir: "../../",
-      },
     }),
   ],
 };

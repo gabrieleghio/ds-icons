@@ -124,7 +124,9 @@ function writeFileWithRetry(
       // server or Defender has the file memory-mapped. Unlinking first forces
       // the OS to mark the old inode for deletion so we can create a fresh one.
       if (fs.existsSync(filePath)) {
-        try { fs.unlinkSync(filePath); } catch {}
+        try {
+          fs.unlinkSync(filePath);
+        } catch {}
       }
       fs.writeFileSync(filePath, content, "utf-8");
       return;
@@ -132,7 +134,9 @@ function writeFileWithRetry(
       if (attempt === retries) throw err;
       // Busy-wait: guaranteed to work in any Node.js context
       const end = Date.now() + delayMs;
-      while (Date.now() < end) { /* wait */ }
+      while (Date.now() < end) {
+        /* wait */
+      }
     }
   }
 }

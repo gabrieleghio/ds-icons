@@ -49,8 +49,49 @@ function getSVGFiles(rawDir: string): SVGFile[] {
   return files.sort((a, b) => (a.name + a.size).localeCompare(b.name + b.size));
 }
 
+/**
+ * Deduplicate SVGFile list by symbol name (name+size).
+ * When two entries share the same symbol, the one with the deeper category
+ * path is preferred (e.g. "brands/Costa/CostaRecycled" wins over "brands/CostaRecycled").
+ * Emits a console warning for every duplicate found so the raw folder structure
+ * can be cleaned up.
+ */
+function deduplicateFiles(files: SVGFile[]): SVGFile[] {
+  const seen = new Map<string, SVGFile>();
+  const duplicates: string[] = [];
+
+  for (const f of files) {
+    const key = `${f.name}${f.size}`;
+    if (seen.has(key)) {
+      const existing = seen.get(f.name + f.size)!;
+      // Prefer the entry with the deeper (more specific) category path
+      const winner =
+        f.category.split("/").length >= existing.category.split("/").length
+          ? f
+          : existing;
+      duplicates.push(
+        `  Duplicate symbol "${key}": "${existing.category}/${existing.name}" vs "${f.category}/${f.name}" → keeping "${winner.category}/${winner.name}"`,
+      );
+      seen.set(key, winner);
+    } else {
+      seen.set(key, f);
+    }
+  }
+
+  if (duplicates.length > 0) {
+    console.warn(
+      `\n⚠ Found ${duplicates.length} duplicate symbol(s) — check your raw/ folder structure:\n${duplicates.join("\n")}\n`,
+    );
+  }
+
+  return Array.from(seen.values()).sort((a, b) =>
+    (a.name + a.size).localeCompare(b.name + b.size),
+  );
+}
+
 export function generateReactIndex(files: SVGFile[]): string {
-  const exports = files
+  const unique = deduplicateFiles(files);
+  const exports = unique
     .map(
       (f) =>
         `export { ${f.name}${f.size} } from './${f.category}/${f.name}/${f.name}${f.size}';`,
@@ -61,7 +102,8 @@ export function generateReactIndex(files: SVGFile[]): string {
 }
 
 export function generateLitIndex(files: SVGFile[]): string {
-  const exports = files
+  const unique = deduplicateFiles(files);
+  const exports = unique
     .map(
       (f) =>
         `export { render${f.name}${f.size} } from './${f.category}/${f.name}/render${f.name}${f.size}';`,

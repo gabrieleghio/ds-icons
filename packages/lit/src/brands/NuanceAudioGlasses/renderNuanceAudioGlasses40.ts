@@ -1,0 +1,12 @@
+import { html } from 'lit';
+import { unsafeHTML } from 'lit/directives/unsafe-html.js';
+import type { IconProps } from '../../types';
+
+export const renderNuanceAudioGlasses40 = ({
+  color = 'currentColor',
+  className,
+}: IconProps) =>
+  html`<svg viewBox="0 0 40 40" width="40" height="40"
+       fill="${color}" class="${className ?? ''}" aria-hidden="true" focusable="false">
+    ${unsafeHTML(`<path d="M31.99 4L34.95 7.41C35.33 7.94 35.53 8.58 35.53 9.23V21.79C35.53 23.21 34.38 24.36 32.96 24.36H24.21C23.67 24.36 23.14 24.5 22.67 24.76L21.02 26.13C20.25 26.56 19.3 26.56 18.53 26.13L16.88 24.76C16.41 24.5 15.88 24.36 15.34 24.36H6.58C5.16 24.36 4.01 23.21 4.01 21.79V9.23C4.01 8.58 4.21 7.94 4.59 7.41L7.55 4M4 29.05V30.25C4 33.22 6.41 35.62 9.37 35.62H10.81C12.5 35.62 14.09 34.83 15.11 33.47L16.83 31.18M35.58 29.05V30.25C35.58 33.22 33.17 35.62 30.21 35.62H28.77C27.08 35.62 25.49 34.83 24.47 33.47L22.75 31.18" stroke="#0E0E0E" stroke-linecap="round" stroke-linejoin="round"/>`)}
+  </svg>`;

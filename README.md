@@ -6,13 +6,13 @@ A comprehensive design system for SVG icons with support for **React**, **Lit We
 
 This monorepo contains three main icon packages:
 
-| Package | Description | Framework |
-|---------|-------------|-----------|
-| [`@gabrieleghio/icons-react`](./packages/react) | React component library for icons | React 18+ |
-| [`@gabrieleghio/icons-lit`](./packages/lit) | Web Components library for icons | Lit 3+ |
-| [`@gabrieleghio/icons-core`](./packages/core) | Optimized SVG assets | None (static SVG) |
+| Package                                         | Description                       | Framework         |
+| ----------------------------------------------- | --------------------------------- | ----------------- |
+| [`@gabrieleghio/icons-react`](./packages/react) | React component library for icons | React 18+         |
+| [`@gabrieleghio/icons-lit`](./packages/lit)     | Web Components library for icons  | Lit 3+            |
+| [`@gabrieleghio/icons-core`](./packages/core)   | Optimized SVG assets              | None (static SVG) |
 
-Plus a showcase application for browsing and testing icons.
+Plus a static SVG package for CMS and email use-cases.
 
 ## ✨ Features
 
@@ -47,37 +47,32 @@ pnpm install
 ```bash
 # Run dev servers for all packages
 pnpm dev
-
-# Or run just the showcase
-pnpm showcase
 ```
-
-The showcase runs on `http://localhost:5173` (or next available port).
 
 ## 📋 Available Scripts
 
 ### Generation & Building
 
-| Script | Description |
-|--------|-------------|
-| `pnpm generate` | Regenerate all components from source SVGs |
-| `pnpm generate:react` | Generate only React components |
-| `pnpm generate:lit` | Generate only Lit components |
-| `pnpm generate:svg` | Optimize SVGs only |
-| `pnpm generate:index` | Generate index files only |
-| `pnpm build` | Full build: generate + build all packages |
-| `pnpm build:react` | Build only React package |
-| `pnpm build:lit` | Build only Lit package |
+| Script                | Description                                     |
+| --------------------- | ----------------------------------------------- |
+| `pnpm generate`       | Regenerate all components from source SVGs      |
+| `pnpm generate:react` | Generate only React components                  |
+| `pnpm generate:lit`   | Generate only Lit components                    |
+| `pnpm generate:svg`   | Optimize SVGs only                              |
+| `pnpm generate:index` | Generate index files only                       |
+| `pnpm import:figma`   | Import SVGs from Figma (requires `FIGMA_TOKEN`) |
+| `pnpm build`          | Full build: generate + build all packages       |
+| `pnpm build:react`    | Build only React package                        |
+| `pnpm build:lit`      | Build only Lit package                          |
 
 ### Testing & Development
 
-| Script | Description |
-|--------|-------------|
-| `pnpm test` | Run unit and integration tests |
-| `pnpm test:watch` | Run tests in watch mode |
-| `pnpm test:coverage` | Run tests with coverage report |
-| `pnpm dev` | Start dev servers for all packages |
-| `pnpm showcase` | Start showcase application |
+| Script               | Description                        |
+| -------------------- | ---------------------------------- |
+| `pnpm test`          | Run unit and integration tests     |
+| `pnpm test:watch`    | Run tests in watch mode            |
+| `pnpm test:coverage` | Run tests with coverage report     |
+| `pnpm dev`           | Start dev servers for all packages |
 
 ## 📂 Project Structure
 
@@ -85,22 +80,33 @@ The showcase runs on `http://localhost:5173` (or next available port).
 ds-icons/
 ├── raw/                          # Source SVGs from Figma
 │   ├── generic/                  # Generic icons
-│   ├── brands/                   # Brand logos
+│   │   └── Backpack/             # Icon variants grouped by name
+│   │       ├── Backpack_16.svg
+│   │       └── Backpack_32.svg
+│   ├── brands/                   # Brand logos (grouped by brand)
+│   │   ├── Oakley/
+│   │   ├── Nuance/
+│   │   ├── TargetOptical/
+│   │   ├── RayBan/
+│   │   └── Costa/
 │   ├── social/                   # Social media icons
-│   ├── payment-flags/            # Payment & flags
+│   ├── payment-flags/            # Payments and country flags
+│   │   ├── payment/              # Payment providers (sizes 16, 24, 48)
+│   │   └── flags/                # Country flags (sizes 16, 24, 48, 64)
 │   ├── faces/                    # Faces & avatars
 │   └── glasses/                  # Glasses & eyewear
 ├── scripts/                      # Generation pipeline
+│   ├── import-figma-icons.ts     # Import SVGs from Figma API
 │   ├── generate-react.ts         # React component generation
 │   ├── generate-lit.ts           # Lit component generation
 │   ├── generate-static-svg.ts    # SVG optimization
 │   ├── generate-index.ts         # Index file generation
-│   └── __tests__/                # 68 tests (95.85% coverage)
+│   ├── generate-core-exports.ts  # Core package.json exports
+│   └── __tests__/                # Generation logic tests
 ├── packages/
 │   ├── react/                    # @gabrieleghio/icons-react
 │   ├── lit/                      # @gabrieleghio/icons-lit
-│   ├── core/                     # @gabrieleghio/icons-core
-│   └── showcase/                 # Demo application
+│   └── core/                     # @gabrieleghio/icons-core
 └── pnpm-workspace.yaml           # Monorepo configuration
 ```
 
@@ -109,10 +115,13 @@ ds-icons/
 ```
 SVG Sources (raw/)
   ↓
-generate-react.ts    → React components (packages/react/src/)
-generate-lit.ts      → Lit render functions (packages/lit/src/)
-generate-static-svg  → Optimized SVGs (packages/core/dist/svg/)
-generate-index.ts    → Export index files
+import-figma-icons.ts  → Fetch & save SVGs from Figma API
+  ↓
+generate-react.ts      → React components (packages/react/src/)
+generate-lit.ts        → Lit render functions (packages/lit/src/)
+generate-static-svg    → Optimized SVGs (packages/core/dist/svg/)
+generate-index.ts      → Export index files
+generate-core-exports  → packages/core/package.json exports map
   ↓
 Built packages ready for publishing
 ```
@@ -121,22 +130,38 @@ Built packages ready for publishing
 
 ### Step 1: Prepare SVG Files
 
-Export icons from Figma and organize in `raw/[category]/[IconName]/`:
+Export icons from Figma using the import script, or manually organize in `raw/[category]/[IconName]/`:
 
 ```
 raw/generic/Home/
   ├── Home_16.svg
+  ├── Home_20.svg
   ├── Home_24.svg
   ├── Home_32.svg
+  ├── Home_40.svg
   └── Home_48.svg
 
-raw/brands/ApplePay/
-  ├── ApplePay_16.svg
-  ├── ApplePay_24.svg
-  └── ApplePay_48.svg
+# Payment providers — sizes 16, 24, 48
+raw/payment-flags/payment/Affirm/
+  ├── Affirm_16.svg
+  ├── Affirm_24.svg
+  └── Affirm_48.svg
+
+# Country flags — sizes 16, 24, 48, 64
+raw/payment-flags/flags/IT/
+  ├── IT_16.svg
+  ├── IT_24.svg
+  ├── IT_48.svg
+  └── IT_64.svg
+
+# Brand icons — grouped by brand
+raw/brands/Oakley/OakleyCart/
+  ├── OakleyCart_16.svg
+  └── OakleyCart_32.svg
 ```
 
 **Naming Convention:**
+
 - **Category folder**: lowercase (generic, brands, social, payment-flags, faces, glasses)
 - **Icon folder**: PascalCase (Home, ApplePay, SunLight, etc.)
 - **SVG file**: `{IconName}_{size}.svg` (e.g., Home_32.svg)
@@ -148,6 +173,7 @@ pnpm generate
 ```
 
 This automatically:
+
 - Generates React components in `packages/react/src/[category]/`
 - Generates Lit render functions in `packages/lit/src/[category]/`
 - Optimizes SVGs to `packages/core/dist/svg/`
@@ -158,9 +184,6 @@ This automatically:
 ```bash
 # Test the generation
 pnpm test:coverage
-
-# View in showcase
-pnpm showcase
 
 # Build all packages
 pnpm build
@@ -199,9 +222,10 @@ pnpm --filter @gabrieleghio/icons-core publish
 ```
 
 **Current Versions:**
-- React: 0.0.4
-- Lit: 0.0.4
-- Core: 0.0.1
+
+- React: 0.0.5
+- Lit: 0.0.5
+- Core: 0.0.2
 
 ## 🔗 Package Documentation
 
@@ -229,6 +253,7 @@ pnpm showcase       # Test in showcase (optional)
 ```
 
 Never commit:
+
 - `node_modules/` directories
 - Build artifacts (`dist/`, `build/`)
 - IDE-specific files

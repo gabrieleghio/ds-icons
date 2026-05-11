@@ -1,0 +1,13 @@
+import React from 'react';
+import type { IconProps } from '../../types';
+
+export const ShapeFaceShapeOval20 = ({
+  color = 'currentColor',
+  className,
+  style,
+}: IconProps) => (
+  <svg viewBox="0 0 20 20" width={20} height={20}
+       fill={color} className={className} style={style} aria-hidden="true" focusable="false">
+    <path d="M9.9707 1.51025C13.6979 1.51054 16.71 5.29395 16.71 9.92041C16.7098 14.5467 13.6979 18.3293 9.9707 18.3296C6.24336 18.3296 3.23062 14.5469 3.23047 9.92041C3.23047 5.29377 6.24326 1.51025 9.9707 1.51025ZM9.9707 2.48975C6.8093 2.48975 4.20996 5.80558 4.20996 9.92041C4.21011 14.035 6.80932 17.3403 9.9707 17.3403C13.1319 17.34 15.7303 14.0248 15.7305 9.92041C15.7305 5.81572 13.1319 2.49005 9.9707 2.48975Z" fill="black"/>
+  </svg>
+);

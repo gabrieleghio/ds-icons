@@ -1,0 +1,21 @@
+import React from 'react';
+import type { IconProps } from '../../types';
+
+export const WatchClockTime20 = ({
+  color = 'currentColor',
+  className,
+  style,
+}: IconProps) => (
+  <svg viewBox="0 0 20 20" width={20} height={20}
+       fill={color} className={className} style={style} aria-hidden="true" focusable="false">
+    <g clip-path="url(#clip0_2055_914)">
+<path d="M13.96 14.65C13.78 14.65 13.6 14.58 13.47 14.45L9.38 10.36C9.32 10.3 9.26 10.22 9.23 10.13C9.23 10.11 9.22 10.03 9.21 10.02L9.18 5.71C9.18 5.33 9.49 5.02 9.87 5.02C10.25 5.02 10.56 5.33 10.56 5.71V9.6L14.45 13.48C14.58 13.61 14.65 13.79 14.65 13.97C14.65 14.15 14.58 14.33 14.45 14.46C14.32 14.59 14.15 14.66 13.96 14.66V14.65Z" fill="black"/>
+<path d="M9.87 19.74C4.43 19.74 0 15.31 0 9.87C0 4.43 4.43 0 9.87 0C15.31 0 19.74 4.43 19.74 9.87C19.74 15.31 15.31 19.74 9.87 19.74ZM9.87 1.24C5.11 1.24 1.24 5.11 1.24 9.87C1.24 14.63 5.11 18.5 9.87 18.5C14.63 18.5 18.5 14.63 18.5 9.87C18.5 5.11 14.63 1.24 9.87 1.24Z" fill="black"/>
+</g>
+<defs>
+<clipPath id="clip0_2055_914">
+<rect width="20" height="20" fill="white"/>
+</clipPath>
+</defs>
+  </svg>
+);

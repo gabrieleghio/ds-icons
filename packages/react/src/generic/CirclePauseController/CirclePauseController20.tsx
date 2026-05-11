@@ -1,0 +1,22 @@
+import React from 'react';
+import type { IconProps } from '../../types';
+
+export const CirclePauseController20 = ({
+  color = 'currentColor',
+  className,
+  style,
+}: IconProps) => (
+  <svg viewBox="0 0 20 20" width={20} height={20}
+       fill={color} className={className} style={style} aria-hidden="true" focusable="false">
+    <g clip-path="url(#clip0_2055_1696)">
+<path d="M9.96016 19.6C4.56016 19.6 0.160156 15.2 0.160156 9.8C0.160156 4.4 4.56016 0 9.96016 0C15.3602 0 19.7602 4.39 19.7602 9.8C19.7602 15.21 15.3602 19.6 9.96016 19.6ZM9.96016 1.26C5.25016 1.26 1.42016 5.09 1.42016 9.8C1.42016 14.51 5.25016 18.34 9.96016 18.34C14.6702 18.34 18.5002 14.51 18.5002 9.8C18.5002 5.09 14.6702 1.26 9.96016 1.26Z" fill="black"/>
+<path d="M7.67016 15.08C7.32016 15.08 7.04016 14.8 7.04016 14.45V5.15C7.04016 4.8 7.32016 4.52 7.67016 4.52C8.02016 4.52 8.30016 4.8 8.30016 5.15V14.46C8.30016 14.81 8.02016 15.09 7.67016 15.09V15.08Z" fill="black"/>
+<path d="M12.2502 15.08C11.9002 15.08 11.6202 14.8 11.6202 14.45V5.15C11.6202 4.8 11.9002 4.52 12.2502 4.52C12.6002 4.52 12.8802 4.8 12.8802 5.15V14.46C12.8802 14.81 12.6002 15.09 12.2502 15.09V15.08Z" fill="black"/>
+</g>
+<defs>
+<clipPath id="clip0_2055_1696">
+<rect width="20" height="20" fill="white"/>
+</clipPath>
+</defs>
+  </svg>
+);

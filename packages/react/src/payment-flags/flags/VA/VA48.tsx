@@ -1,0 +1,19 @@
+import React from 'react';
+import type { IconProps } from '../../../types';
+
+export const VA48 = ({
+  color = 'currentColor',
+  className,
+  style,
+}: IconProps) => (
+  <svg viewBox="0 0 48 45" width={48} height={45}
+       fill={color} className={className} style={style} aria-hidden="true" focusable="false">
+    <rect width="48" height="45" fill="url(#pattern0_2055_4)"/>
+<defs>
+<pattern id="pattern0_2055_4" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlinkHref="#image0_2055_4" transform="scale(0.0208333 0.0222222)"/>
+</pattern>
+<image id="image0_2055_4" width="48" height="45" preserveAspectRatio="none" xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAtCAYAAADoSujCAAAACXBIWXMAACE4AAAhOAFFljFgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAKPSURBVHgB7ZrPaxNBFMe/s4ZYsontzW5ETMCzNGAPnmz+DKEHe/XSgn+AzdVT/A/06tWDR1M8CHpIEPRUaFDcBIq1Jml+lJh13raznQ0k2YUtbwP7gWTnvYThfWfem8zuROCSozrWVsbYdYAtXLyi4Y6NqHAcp2EYRtWyrDfKJ+it9QkFJ4UPsllA1EQoQKMphChLIU1XgP0FR7iO4InrEUA0R6NRKdX6jKeOFnzOBMyMnBoD0WBZiAKZPuj3++h0OspVSKfTe4YjsKs8t3JANhth8BEiUwamacr4srrvMYW6oRyZFcQeEqGx5RvrOI78NHIV8ttYchIB3CQCuImFgH/npzh8X3avYYmFgHa9gl675l7Dwi7g+NsrHH+vXrTllewwsAo47zXRbuz7fGSTPyhsAmblfdh6YBNA+T5rpN2ZCVgPKTDQarXQTm0DD7aRz+fljvtqy/3j4w5ODl+79XAjvYb10ou5fbHMAO3tFbZtu4IIFbyHcBb2xTIDNOqECpxE/P26h6H91vsOjfz6xv7CvlgEELoI8bOC4Z933mdBgydYl1ESYf5+CUML3rz/PHDwBKsAyvnhr6u0WR1topN54qVWENgETBcsBb86eui29cJeBIuAecErgopgEZDO3fPaVLB68Ppvgr7czoJlFdKLlNonB888W61O0+1ZsC2j81aaIIErlv6OTMjnol6iWbcRPXcX53FY9OJO7om5SQRwkwjgJhHAjU+AM0HsmUz8QZKAmjJ6fcSewWCgmw1DjvqBsnpnwFk/njNBW+tut6ufUtIhX1XQCf3NMepYwnNiuWstGsUSTsUYZXJgeXBP6qnhFrH1SKrZRFE+R9qRZgPxpSZTqUIn9PQ3A3L8B92aATQZgu08AAAAAElFTkSuQmCC"/>
+</defs>
+  </svg>
+);

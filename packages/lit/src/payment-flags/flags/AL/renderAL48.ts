@@ -1,0 +1,18 @@
+import { html } from 'lit';
+import { unsafeHTML } from 'lit/directives/unsafe-html.js';
+import type { IconProps } from '../../../types';
+
+export const renderAL48 = ({
+  color = 'currentColor',
+  className,
+}: IconProps) =>
+  html`<svg viewBox="0 0 63 45" width="63" height="45"
+       fill="${color}" class="${className ?? ''}" aria-hidden="true" focusable="false">
+    ${unsafeHTML(`<rect width="63" height="45" fill="url(#pattern0_2055_4)"/>
+<defs>
+<pattern id="pattern0_2055_4" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlink:href="#image0_2055_4" transform="scale(0.015873 0.0222222)"/>
+</pattern>
+<image id="image0_2055_4" width="63" height="45" preserveAspectRatio="none" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD8AAAAtCAYAAAAZQbNPAAAACXBIWXMAACE4AAAhOAFFljFgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMgSURBVHgB7Zq/b9NAFMffc0P6M1EkhNoOlSJmJJqRLqSI/4Cha5FgTqRmZmBupDIzsSLB3I3CEMZ0YE8khlJVQMjvX/VxXzcXnNRJ0+BzJDsf6Sr7fHbzfe/u/N75mHrkY7GYETZTgkWSiJPkP07ZFEcPLyrvVAXjT34jFmdhfpKHcfI/RcHt3cSPZtESf7oeLVAwhCuKomUkQvl7kX2yCV9lphVZDPIPpixNIagiS484hc10iJlTqibSE+434EjoghFqPQMwi8eGHPXbqtGSD4XbWR3Qx8mB3u2nru7EsGv9rncsc/FekK00KV2q0/dL0/F6WU5Ez3/XrHZeESIPgKDD6pWoXLtLB2tLtLcS7l8/bnYoJQ0DAxxTx6o7iCyRbrSLtwsH8Hz6T52+SiO8WF2krLwG8XZUe90GYBnd9d/868b0o+DZz6rl0Z1FZ3sOG2EUGfmMUaJzra5lrA9312hazs1/w841z6M7535VaSccumaESYUDJ68r0fgfbuJ6tx82Arr3pMIVqv0j+QwdohWudfvNsxJ5xdlmjKbF3u3n7/mgMhcfVObig8pcfFDRntggSkOouyUDKCQ0N/E6umwlP0h2RqW/bqFFvBK8txymrYWrzoXEZxIgGokLjPCtc0nvG21thnBNvJNgBRKTSeNzKzeQBbnBgzsLsixfM4RbuBbbjwNev01yAuH/k7aOw9PY/jZe79/T7mrL5OxoF5+tTrcm58VanhbxyMeR4qIoD2Jx4qVcthoHrqtFDNynnnFY1WMILbM9lqKA8h4Eoa5sipEzNybJjGwX7X1VGb5XB9re8/YfrI6jBlsT2dOLirVSq4Bg1CvhTvfqwJPZfpi3tRa9Kjf653iV3TQk3GLmKzkQqsTaj73Gk48WTqA7I3DJePBxYhQzE4/x/1FTIDMp85Q2qAyI15tAzh4xdC7FixN1UheC/ExjUF/eEII/qzNs1oEBTJ8ZAXpqg7uxsCHpDWPnJS+aeQrWPrzC9nn5vpEolUqCjV1ZUaRgUBDcfoKDgQ1K+Y3IPpucsm9P8wgPxpk4EcxfqGkcweGo+Qu2BHC0mimO1QAAAABJRU5ErkJggg=="/>
+</defs>`)}
+  </svg>`;

@@ -1,0 +1,14 @@
+import { html } from 'lit';
+import { unsafeHTML } from 'lit/directives/unsafe-html.js';
+import type { IconProps } from '../../types';
+
+export const renderHiddenActions40 = ({
+  color = 'currentColor',
+  className,
+}: IconProps) =>
+  html`<svg viewBox="0 0 40 40" width="40" height="40"
+       fill="${color}" class="${className ?? ''}" aria-hidden="true" focusable="false">
+    ${unsafeHTML(`<path d="M19.667 34.1245C20.7969 34.1245 21.7166 35.0445 21.7168 36.1743C21.7168 37.3043 20.797 38.2251 19.667 38.2251C18.5371 38.225 17.6172 37.3043 17.6172 36.1743C17.6174 35.0445 18.5372 34.1246 19.667 34.1245Z" fill="black"/>
+<path d="M19.667 17.9448C20.797 17.9448 21.7168 18.8646 21.7168 19.9946C21.7168 21.1246 20.797 22.0444 19.667 22.0444C18.5371 22.0443 17.6172 21.1246 17.6172 19.9946C17.6172 18.8647 18.5371 17.9449 19.667 17.9448Z" fill="black"/>
+<path d="M19.667 1.75439C20.7968 1.75439 21.7166 2.6744 21.7168 3.8042C21.7168 4.9342 20.797 5.85498 19.667 5.85498C18.5371 5.85488 17.6172 4.93413 17.6172 3.8042C17.6174 2.67446 18.5372 1.7545 19.667 1.75439Z" fill="black"/>`)}
+  </svg>`;

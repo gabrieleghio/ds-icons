@@ -1,0 +1,15 @@
+import { html } from 'lit';
+import { unsafeHTML } from 'lit/directives/unsafe-html.js';
+import type { IconProps } from '../../types';
+
+export const renderCropArrow16 = ({
+  color = 'currentColor',
+  className,
+}: IconProps) =>
+  html`<svg viewBox="0 0 16 16" width="16" height="16"
+       fill="${color}" class="${className ?? ''}" aria-hidden="true" focusable="false">
+    ${unsafeHTML(`<path d="M12.67 15.15C12.35 15.15 12.09 14.89 12.09 14.57V3.93H1.58C1.26 3.93 1 3.67 1 3.35C1 3.03 1.26 2.77 1.58 2.77H12.68C13 2.77 13.26 3.03 13.26 3.35V14.57C13.26 14.89 13 15.15 12.68 15.15H12.67Z" fill="black"/>
+<path d="M12.67 15C12.43 15 12.24 14.81 12.24 14.57V3.78H1.58C1.34 3.78 1.15 3.59 1.15 3.35C1.15 3.11 1.34 2.92 1.58 2.92H12.68C12.92 2.92 13.11 3.11 13.11 3.35V14.57C13.11 14.81 12.92 15 12.68 15H12.67Z" fill="black"/>
+<path d="M3.33 13.38C3.01 13.38 2.75 13.12 2.75 12.8V1.58C2.75 1.26 3.01 1 3.33 1C3.65 1 3.91 1.26 3.91 1.58V12.21H14.42C14.74 12.21 15 12.47 15 12.79C15 13.11 14.74 13.37 14.42 13.37H3.33V13.38Z" fill="black"/>
+<path d="M3.33 13.23C3.09 13.23 2.9 13.04 2.9 12.8V1.58C2.9 1.34 3.09 1.15 3.33 1.15C3.57 1.15 3.76 1.34 3.76 1.58V12.36H14.42C14.66 12.36 14.85 12.55 14.85 12.79C14.85 13.03 14.66 13.22 14.42 13.22H3.33V13.23Z" fill="black"/>`)}
+  </svg>`;

@@ -1,0 +1,26 @@
+import React from 'react';
+import type { IconProps } from '../../types';
+
+export const CirclePlus32 = ({
+  color = 'currentColor',
+  className,
+  style,
+}: IconProps) => (
+  <svg viewBox="0 0 32 32" width={32} height={32}
+       fill={color} className={className} style={style} aria-hidden="true" focusable="false">
+    <g clip-path="url(#clip0_2055_393)">
+<g clip-path="url(#clip1_2055_393)">
+<path d="M15.83 31.65C7.1 31.65 0 24.55 0 15.82C0 7.09 7.1 0 15.83 0C24.56 0 31.66 7.1 31.66 15.82C31.66 24.54 24.56 31.64 15.83 31.64V31.65ZM15.83 1.64C8 1.64 1.64 8 1.64 15.82C1.64 23.64 8.01 30.01 15.83 30.01C23.65 30.01 30.02 23.64 30.02 15.82C30.02 8 23.66 1.64 15.83 1.64Z" fill="black"/>
+<path d="M15.83 24.62C15.38 24.62 15.01 24.25 15.01 23.8V16.59L7.85 16.64C7.4 16.64 7.03 16.27 7.03 15.82C7.03 15.37 7.4 15 7.85 15H15.06L15.01 7.84C15.01 7.39 15.38 7.02 15.83 7.02C16.28 7.02 16.65 7.39 16.65 7.84V15.05L23.81 15C24.26 15 24.63 15.37 24.63 15.82C24.63 16.27 24.26 16.64 23.81 16.64H16.6L16.65 23.8C16.65 24.25 16.28 24.62 15.83 24.62Z" fill="black"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_2055_393">
+<rect width="32" height="32" fill="white"/>
+</clipPath>
+<clipPath id="clip1_2055_393">
+<rect width="32" height="32" fill="white"/>
+</clipPath>
+</defs>
+  </svg>
+);

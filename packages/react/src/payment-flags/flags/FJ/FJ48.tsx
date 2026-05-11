@@ -1,0 +1,19 @@
+import React from 'react';
+import type { IconProps } from '../../../types';
+
+export const FJ48 = ({
+  color = 'currentColor',
+  className,
+  style,
+}: IconProps) => (
+  <svg viewBox="0 0 63 45" width={63} height={45}
+       fill={color} className={className} style={style} aria-hidden="true" focusable="false">
+    <rect width="63" height="45" fill="url(#pattern0_2055_4)"/>
+<defs>
+<pattern id="pattern0_2055_4" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlinkHref="#image0_2055_4" transform="scale(0.015873 0.0222222)"/>
+</pattern>
+<image id="image0_2055_4" width="63" height="45" preserveAspectRatio="none" xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD8AAAAtCAYAAAAZQbNPAAAACXBIWXMAACE4AAAhOAFFljFgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAALvSURBVHgB7ZrNaxNBGMafWbeiGw9FkVIpGAQpeLANeFEQk1LQk1gUKQElOXiu/0HpyWs9e2g8iLU9RJqToEYF2+MGLxIUEvDQeKhEmmy+NjvupPnYTUyy+d5m9wcTZmdeNvvuPPPuu7NDUOZeUJwUZG6FgroJ4Mb4ESGErL96MPey0kDYz3JQdHIyCatVJ8afuMJTz+aSK15y3rsdicEajleISynq4r1bog8ax+9fmcLty+fhmDiBfiPJFLsJCW9+HGKYUKpAzmVRSFf/1ykIeMqr80Cd50c8mruAO6rjg0LgCRZnHKWbEIqlMCwI4TBxSgAUBYVMutRGOXKLUx2frxjddJ7FMFicETAK+NOOap0FdU7bqZM6IfqyttZ4Nm1/Pcy+/hxlBJ7DKCB11zmaqzAJlnaeb9pDKXpidfWomBhb9laluez/F8FbYcS+16nUZ2zZW5Xeor1W6gOQ9IuFaXTLk4/7bW1s2VuV5s4bye1b0SK374pvBkqH2CNvVXTRni0ysAWHEkaidyubFrm9JCvomKvoO7qRf/8rjWGwl8jADOhGPhRPwaGO/PVpoaaAPsKU9UG9wTvx4S1htaIhydn8eVgqpqDZtDKSXIUTaIcd7a0KDzPj93dv8/gZ2mFu5wOB7m0MOG/L3qxEg+8wO3myscPjqdXD4Ybug2wRRjC186GL1zDravMVye1uaNoQ/wDJPNphatlHVQc6/abHErWoAccZpp/zLBvcNZgOM7udDm7WsQh4G9//tlUAG3Fm1wnmftRpYAr4qo7sXecZ3FCPaTnF3dvPlEbcqNS1EO92pJocC+emMO5IB7+rdTu3tyo656nSxQrLMYLWvf6ybSmfKgdyTsI4U8xpHpkUIkcU+rlyXJDSkLPS2CmAljci5Wu7sdiGpOfEFxQn8wUiglhnH56q/tjrh/OXuMCSK6kUqUeVQRwWgDlOi3SB1XWrlMtboo8jZAWa7WnDuiYMGBbbCOgXKYX1t35XkrX9AxKdDXnGhxmPAAAAAElFTkSuQmCC"/>
+</defs>
+  </svg>
+);

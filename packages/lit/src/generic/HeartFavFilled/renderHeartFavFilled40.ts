@@ -1,0 +1,19 @@
+import { html } from 'lit';
+import { unsafeHTML } from 'lit/directives/unsafe-html.js';
+import type { IconProps } from '../../types';
+
+export const renderHeartFavFilled40 = ({
+  color = 'currentColor',
+  className,
+}: IconProps) =>
+  html`<svg viewBox="0 0 40 40" width="40" height="40"
+       fill="${color}" class="${className ?? ''}" aria-hidden="true" focusable="false">
+    ${unsafeHTML(`<g clip-path="url(#clip0_2055_1171)">
+<path d="M37.503 10.2219C36.9947 9.00524 36.2697 7.90524 35.3363 6.97191C34.403 6.03857 33.3113 5.30524 32.0863 4.80524C29.6447 3.79691 26.8697 3.79691 24.428 4.80524C23.2113 5.31357 22.1197 6.03857 21.178 6.97191L20.003 8.14691L18.8197 6.97191C16.928 5.08024 14.4197 4.03857 11.7447 4.03857C9.06966 4.03857 6.56133 5.08024 4.66966 6.97191C2.77799 8.86357 1.73633 11.3719 1.73633 14.0469C1.73633 16.7219 2.77799 19.2302 4.66966 21.1219L19.4113 35.8636C19.578 36.0302 19.7863 36.1052 20.003 36.1052C20.2197 36.1052 20.428 36.0219 20.5947 35.8636L35.3363 21.1219C36.2697 20.1886 37.003 19.0969 37.503 17.8719C38.0113 16.6552 38.2697 15.3636 38.2697 14.0386C38.2697 12.7136 38.0113 11.4302 37.503 10.2052V10.2219Z" fill="black"/>
+</g>
+<defs>
+<clipPath id="clip0_2055_1171">
+<rect width="40" height="40" fill="white"/>
+</clipPath>
+</defs>`)}
+  </svg>`;

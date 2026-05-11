@@ -1,0 +1,12 @@
+import { html } from 'lit';
+import { unsafeHTML } from 'lit/directives/unsafe-html.js';
+import type { IconProps } from '../../types';
+
+export const renderRestrictionsLimits16 = ({
+  color = 'currentColor',
+  className,
+}: IconProps) =>
+  html`<svg viewBox="0 0 17 17" width="17" height="17"
+       fill="${color}" class="${className ?? ''}" aria-hidden="true" focusable="false">
+    ${unsafeHTML(`<path d="M8.43163 17C3.89348 17 0.206884 13.3031 0.206884 8.77529C0.206884 4.24753 3.89348 0.55055 8.43163 0.55055C10.6228 0.55055 12.6894 1.4021 14.2367 2.95982C15.7944 4.51753 16.646 6.58411 16.646 8.77529C16.646 13.3134 12.9594 17 8.42124 17H8.43163ZM3.92463 14.1338C5.19158 15.2035 6.78045 15.785 8.42124 15.785C12.2844 15.785 15.431 12.6384 15.431 8.77529C15.431 7.1345 14.8494 5.53524 13.7798 4.27869L3.92463 14.1338ZM8.43163 1.76557C4.56849 1.76557 1.4219 4.91216 1.4219 8.77529C1.4219 10.4161 2.00345 12.0153 3.07308 13.2719L12.9282 3.41675C11.6613 2.34712 10.0724 1.76557 8.43163 1.76557Z" fill="black"/>`)}
+  </svg>`;

@@ -1,0 +1,19 @@
+import { html } from 'lit';
+import { unsafeHTML } from 'lit/directives/unsafe-html.js';
+import type { IconProps } from '../../types';
+
+export const renderLensSunLogoPrizm16 = ({
+  color = 'currentColor',
+  className,
+}: IconProps) =>
+  html`<svg viewBox="0 0 16 16" width="16" height="16"
+       fill="${color}" class="${className ?? ''}" aria-hidden="true" focusable="false">
+    ${unsafeHTML(`<g clip-path="url(#clip0_2260_6252)">
+<path d="M5.15924 2.20028C0.0608665 2.98064 -0.105611 11.2213 3.32799 13.9786C6.91765 16.8295 13.3166 12.0849 14.919 6.00845C15.7514 2.41878 10.0079 1.54477 5.15924 2.20028ZM5.48179 3.16793L7.6564 5.10323L6.64713 4.70784L5.70029 3.86505L5.48179 4.56218V3.15752V3.16793ZM2.79734 5.40497L5.20086 3.25117V3.74019L4.06673 4.79108L5.03438 4.72865L2.79734 5.39456V5.40497ZM3.44244 5.49861L4.77426 5.13444H6.49106L6.02284 4.77027L7.94773 5.49861H3.44244Z" fill="black"/>
+</g>
+<defs>
+<clipPath id="clip0_2260_6252">
+<rect width="15.9998" height="16" fill="white"/>
+</clipPath>
+</defs>`)}
+  </svg>`;

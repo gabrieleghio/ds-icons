@@ -1,0 +1,12 @@
+import { html } from 'lit';
+import { unsafeHTML } from 'lit/directives/unsafe-html.js';
+import type { IconProps } from '../../types';
+
+export const renderFrameShapeOvalSunglasses16 = ({
+  color = 'currentColor',
+  className,
+}: IconProps) =>
+  html`<svg viewBox="0 0 16 16" width="16" height="16"
+       fill="${color}" class="${className ?? ''}" aria-hidden="true" focusable="false">
+    ${unsafeHTML(`<path d="M11.7306 10C9.96609 10 8.47025 9.08625 8.47025 8.00466C8.47025 7.78089 8.53295 7.55711 8.65835 7.34266C8.44338 7.31469 8.21945 7.29604 7.99552 7.29604C7.77159 7.29604 7.54766 7.31469 7.33269 7.34266C7.45809 7.55711 7.52079 7.78089 7.52079 8.00466C7.52079 9.08625 6.02495 10 4.2604 10C2.49584 10 1 9.08625 1 8.00466C1 6.92308 2.49584 6.00932 4.2604 6.00932C5.02175 6.00932 5.76519 6.17716 6.36532 6.48485C6.80422 6.30769 7.37748 6.20513 8.00448 6.20513C8.63148 6.20513 9.18682 6.29837 9.70633 6.47552C10.2348 6.17716 10.9693 6 11.7396 6C13.5042 6 15 6.91375 15 7.99534C15 9.07692 13.5042 9.99068 11.7396 9.99068L11.7306 10Z" fill="black"/>`)}
+  </svg>`;

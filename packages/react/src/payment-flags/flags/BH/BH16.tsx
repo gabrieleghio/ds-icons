@@ -1,0 +1,19 @@
+import React from 'react';
+import type { IconProps } from '../../../types';
+
+export const BH16 = ({
+  color = 'currentColor',
+  className,
+  style,
+}: IconProps) => (
+  <svg viewBox="0 0 23 16" width={23} height={16}
+       fill={color} className={className} style={style} aria-hidden="true" focusable="false">
+    <rect width="22.4" height="16" fill="url(#pattern0_2072_1432)"/>
+<defs>
+<pattern id="pattern0_2072_1432" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlinkHref="#image0_2072_1432" transform="scale(0.015873 0.0222222)"/>
+</pattern>
+<image id="image0_2072_1432" width="63" height="45" preserveAspectRatio="none" xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD8AAAAtCAYAAAAZQbNPAAAACXBIWXMAACE4AAAhOAFFljFgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAALxSURBVHgB3ZpLaBNBGMf/SRsploZArW0x4io+DlV8FSFebIqvWmsu1lYUH6jxUUVoz9IEz0E9CpWiIIgUBEVREGJOXoTqxYtIIghVqhiwaYNNs87XdNcxNCWv3Z2dH0wy+7Eh/Pf/7czst+OAxugTDzJ116Gigx11QDrU93DiNs4fuq9FHAvfCvovRdEZUCA/CczBj8tdCU18HHQBfPuAvovA8npITgKu9HYSf4a1UT3c2AxcDQGb2yENqgr8SQPTKS6WDdcgJ7xFD86wE2LP2YlTwDYfpMDBPK515W7yzKweo0O14I+aWoHQXWBlK6SAMiD5Uz9cWrzGsSDQewFS8OuH3i1OPCFLFpQlXsPuWVCReMLOWcCJd6IcJieAgSPAi0ewM+U5z9O2E7gybJ8sqDjt86lvYEulQfZEcBjCU3XxGiS+Nyh2FhgmnqDBkGYEUbPAUPELnDrqwY3BJijeZRCJie8ZvU9r+xAM4MPHNJ6++g2PuwZb2+ogClOprN43zHkeyoJIqGX+QlgN73x583yJPBhLov3gZ8TepiASpognvnydxd6+BIbC3yAKpqR9Pmu8Lrx+rFgyGJqe9vlQFmzY/Qk3b03CSixxniew342xkdUwC8ud17h2rtFU4fnUwgLonr8XWYU9PmurxKY7T26/e7necuGEac6L4jaPKc6L5DaPoc573E6MRLwIHGiAiBgmngSTcLoAVqDqryELx6s/z1NVh6q73cchJNzzfHWdp3rewHCuoGEDqiNedLcLULl4m7nNU5l4qtjazG2e8sQrG3Nu07eNKV18d3+uPF0v5txdCsWLp1o8vZmhe1wSihMvkds8S4uXzW31//UciX+Dxfbd0RsXGs1lcps2Jek4xkl8DLx42oZGI/kuP6SBHE/PsDb9L+bM3qG1vYe1cdA+vE1bgNNDwIpmSE4cwa515HySNT96TkTRc1KB/MQxh07qaM+bCTx7uJYFz87vUTUf1YQWZZ9huNI7aOsp/elfOnPnFMp4QoIAAAAASUVORK5CYII="/>
+</defs>
+  </svg>
+);

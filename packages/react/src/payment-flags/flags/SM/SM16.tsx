@@ -1,0 +1,19 @@
+import React from 'react';
+import type { IconProps } from '../../../types';
+
+export const SM16 = ({
+  color = 'currentColor',
+  className,
+  style,
+}: IconProps) => (
+  <svg viewBox="0 0 23 16" width={23} height={16}
+       fill={color} className={className} style={style} aria-hidden="true" focusable="false">
+    <rect width="22.4" height="16" fill="url(#pattern0_2072_2284)"/>
+<defs>
+<pattern id="pattern0_2072_2284" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlinkHref="#image0_2072_2284" transform="scale(0.015873 0.0222222)"/>
+</pattern>
+<image id="image0_2072_2284" width="63" height="45" preserveAspectRatio="none" xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD8AAAAtCAYAAAAZQbNPAAAACXBIWXMAACE4AAAhOAFFljFgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAO7SURBVHgB7ZpLaBRJGMf/VUkmnXlkJyTLzuwmbDbEhb1sMsjKsiwxZndhdxVFBFFRiYgnhehNEBHEowdzEAQRVBRRUfGgePB9UFQ0iuAzzIwaMwlGJ4+ZSdpxpq2vY/d0YnwFqw/d8ztMV31VDfOrV1c1zfCOWCwWVBSlQ9O0VpFthcMQXrc55zvC4fA+I8boJ5FI1IvCCyJZD+cTZ4zNEY0Q1+V7e3tjcIe4QVxV1Uip6PV20ev1RjQQCMDn80G0DpyC8EMmk8Hw8LARqvd4POu5KOgwIpWVlfD7/Y4SJ8iHOpTcLLHZXFybjYDX64WToQaw0MqtOaf1+GTEaj8xDxdTlHcrRXm3UgrJJM7/hukSbrsBmRSHvVuRLl8z6yAqwvPASwOfVZ/q+eqWoDqyC7Jh4kSnGRlxzIMstDcjGHtxCelnh5BNPXqv3BOcCeXb2fCKhmKf2VDTQRzkzLRt8lZInhrhdfKWEG6BUtMKT9VM2IFVXvpqP5kzV47BX1GJxrrVCP2yBX0ve3Dl/jVREse/fyyCndi24JHkmq3z0DfQgz8j/yBUU6vHQ9W1unT303tYurFFL7cLW+RJfMP2ZUhlhtA+v2PKOuuWbIbfG9Dr2dUAbOXR2+ac91V/Bxl0n1yEbDqB73/fhG8a5uqxhvwd/JU7gHMlyxHlTXrs1YPD6L/VCaVqBn76bx9kkH7Zb6al9/xg9LQuTpQLKYNZudMo1zJoyl0wY4G6Fv06lnys3ycb6fJD0VNmWqn62UzXaOND+wftsRkr84WnvE8W0uWpF6eDOji9+74E6fL5bMpMG8OfeM7Gp8AAqzVjarKw+cm9TkE20uV5WeGN6UjPZTN9p6QNKipwnf9vxkaT3Wa6xOOH9P8GySiWRW7IsohF+a/Y7dmOaEmTGRu4u8dMlwdnQDbS5YMNhZ6l+d93s3PKeiRunRbW+2QhXZ6e69ZeTD48jN6r20RDjM9vapB+0SAvLL1e5guZ+wGZ2LLJoR59cnatuPZ9si6J//j3zgmPva+JrZscgkTGhUIfradUNUoVn4xtpzoSalxwXN+80O6Nhjs9BulpQIsizXE7hroV24+0JGi35IcovsNzK0V5t1KUN9DyeTgZ+jbHChfZi0Ymq2bgZHLqaCGjoYuzvHbJyGczabwZyzhuBJBPdjQNNT1SCHLWydpPdAXzWdYF5qLv8DTE9i9ubuB7F0YGeU6bIwJxuAEhLnzbKDnh86sVR7raGWP0Yr0Z9qJBMrS2MWiXeQo79q6KDFLsLXsWVJBLv1cVAAAAAElFTkSuQmCC"/>
+</defs>
+  </svg>
+);

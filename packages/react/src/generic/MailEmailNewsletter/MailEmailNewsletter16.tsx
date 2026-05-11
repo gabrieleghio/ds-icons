@@ -1,0 +1,20 @@
+import React from 'react';
+import type { IconProps } from '../../types';
+
+export const MailEmailNewsletter16 = ({
+  color = 'currentColor',
+  className,
+  style,
+}: IconProps) => (
+  <svg viewBox="0 0 16 16" width={16} height={16}
+       fill={color} className={className} style={style} aria-hidden="true" focusable="false">
+    <g clip-path="url(#clip0_2055_803)">
+<path d="M1.58 13.98C1.26 13.98 1 13.72 1 13.4V3.57C1 3.49 1.02 3.41 1.05 3.34C1.08 3.27 1.12 3.21 1.18 3.15C1.26 3.08 1.31 3.05 1.37 3.03L1.52 3H14.85C14.93 3 15 3 15.07 3.03C15.21 3.09 15.33 3.2 15.39 3.35C15.42 3.42 15.43 3.5 15.43 3.57V13.4C15.43 13.72 15.17 13.98 14.85 13.98H1.58ZM14.26 12.81V4.98L8.59 10.65C8.48 10.76 8.33 10.82 8.18 10.82C8.02 10.82 7.87 10.76 7.76 10.65L2.16 4.99V12.81H14.25H14.26ZM8.17 9.41L13.43 4.15H2.98L8.18 9.41H8.17Z" fill="black"/>
+</g>
+<defs>
+<clipPath id="clip0_2055_803">
+<rect width="16" height="16" fill="white"/>
+</clipPath>
+</defs>
+  </svg>
+);

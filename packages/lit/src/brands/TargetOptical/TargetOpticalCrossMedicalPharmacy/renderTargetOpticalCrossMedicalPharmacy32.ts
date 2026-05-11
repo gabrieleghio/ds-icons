@@ -1,0 +1,20 @@
+import { html } from 'lit';
+import { unsafeHTML } from 'lit/directives/unsafe-html.js';
+import type { IconProps } from '../../../types';
+
+export const renderTargetOpticalCrossMedicalPharmacy32 = ({
+  color = 'currentColor',
+  className,
+}: IconProps) =>
+  html`<svg viewBox="0 0 32 32" width="32" height="32"
+       fill="${color}" class="${className ?? ''}" aria-hidden="true" focusable="false">
+    ${unsafeHTML(`<g clip-path="url(#clip0_7218_349)">
+<path d="M15.9967 2V30H11.1537C10.7878 30 10.4885 29.7006 10.4885 29.3348V21.5049H2.66524C2.29936 21.5049 2 21.2055 2 20.8396V11.1604C2 10.7945 2.29936 10.4951 2.66524 10.4951H10.4885V2.66524C10.4885 2.29936 10.7878 2 11.1537 2H15.9967Z" fill="#CC0000"/>
+<path d="M29.9934 11.1604V20.8396C29.9934 21.2055 29.694 21.5049 29.3281 21.5049H21.4982V29.3348C21.4982 29.7006 21.1989 30 20.833 30H15.9967V2H20.833C21.1989 2 21.4982 2.29936 21.4982 2.66524V10.4951H29.3281C29.694 10.4951 29.9934 10.7945 29.9934 11.1604Z" fill="#A60D0D"/>
+</g>
+<defs>
+<clipPath id="clip0_7218_349">
+<rect width="32" height="32" fill="white"/>
+</clipPath>
+</defs>`)}
+  </svg>`;

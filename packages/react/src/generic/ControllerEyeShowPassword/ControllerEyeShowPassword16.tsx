@@ -1,0 +1,21 @@
+import React from 'react';
+import type { IconProps } from '../../types';
+
+export const ControllerEyeShowPassword16 = ({
+  color = 'currentColor',
+  className,
+  style,
+}: IconProps) => (
+  <svg viewBox="0 0 16 16" width={16} height={16}
+       fill={color} className={className} style={style} aria-hidden="true" focusable="false">
+    <g clip-path="url(#clip0_2055_1812)">
+<path d="M8.42 13.11C6.48 13.11 4.58 12.19 2.94 10.44C1.81 9.24 1.18 8.05 1.06 7.82C0.98 7.65 0.98 7.45 1.06 7.29C1.18 7.06 1.82 5.87 2.94 4.67C4.58 2.92 6.47 2 8.42 2C10.37 2 12.26 2.92 13.9 4.67C15.03 5.87 15.66 7.06 15.78 7.29C15.86 7.46 15.86 7.66 15.78 7.82C15.66 8.05 15.02 9.24 13.9 10.44C12.26 12.19 10.37 13.11 8.42 13.11ZM2.22 7.59C4.06 10.46 6.19 11.93 8.42 11.93C11.85 11.93 14.1 8.4 14.62 7.5C12.78 4.63 10.65 3.16 8.42 3.16C4.99 3.16 2.74 6.69 2.22 7.59Z" fill="black"/>
+<path d="M8.42 10C7.07 10 5.97 8.9 5.97 7.55C5.97 6.2 7.07 5.1 8.42 5.1C9.77 5.1 10.87 6.2 10.87 7.55C10.87 8.9 9.77 10 8.42 10ZM8.42 6.27C7.71 6.27 7.14 6.84 7.14 7.55C7.14 8.26 7.71 8.83 8.42 8.83C9.13 8.83 9.7 8.26 9.7 7.55C9.7 6.84 9.13 6.27 8.42 6.27Z" fill="black"/>
+</g>
+<defs>
+<clipPath id="clip0_2055_1812">
+<rect width="16" height="16" fill="white"/>
+</clipPath>
+</defs>
+  </svg>
+);

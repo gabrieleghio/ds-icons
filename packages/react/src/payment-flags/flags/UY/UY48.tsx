@@ -1,0 +1,19 @@
+import React from 'react';
+import type { IconProps } from '../../../types';
+
+export const UY48 = ({
+  color = 'currentColor',
+  className,
+  style,
+}: IconProps) => (
+  <svg viewBox="0 0 63 45" width={63} height={45}
+       fill={color} className={className} style={style} aria-hidden="true" focusable="false">
+    <rect width="63" height="45" fill="url(#pattern0_2055_4)"/>
+<defs>
+<pattern id="pattern0_2055_4" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlinkHref="#image0_2055_4" transform="scale(0.015873 0.0222222)"/>
+</pattern>
+<image id="image0_2055_4" width="63" height="45" preserveAspectRatio="none" xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD8AAAAtCAYAAAAZQbNPAAAACXBIWXMAACE4AAAhOAFFljFgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAPISURBVHgB7Zq/T1NRFMe/9xXbQqFUipF2ajVhcgCddBGZZdLBmBgZXA0M+n/g5mKiMZpo1EXjiOiAk2LiRmJaljYkFlr6u6Xvec69feUV0tAWA6+vfBLoO/eVNt97zj3n3McVqBOLxQJer3fBMIwZMmfgMEjXL03TlkKh0AtzTPCvZDIZoZtf6DIC5xMXQtygSYhL8YlEIob+EG4SL5fL0wPk9XnyesQcHRkZgc/nA80OnALpQ6FQwM7OjjkUcbvdixrdWDBH/H4/hoeHHSWcYT3sUNZmGbuu0euUOTA0NAQnwxNgYUazWh15XN8GtpZQW78IbD8lOw27Q9m+2Ua3pJ9Bz7wj0Vl6fQtkXqHX6E586SdQS8OobUnTqGwAu0mgsIpeYgDdUFhmxST4r7LJ+zDKQHmNEse1tj5C3PuIE6G41bjs3PO1pPK6KbyOwRPA3q/G0Ct0Lr5SF8eet1Ktz2g1iV6h/bBn0ez14qoMcaMSb7pt1FIQHPqlVdU0n4nSp4dgZw4Xz2JLayqkGRJYy3yiiUg1vc0o/YZeTUAbvQnkPqtBV4BywCzgvQw70lo81/HMayWaPV3jNU2hracOCDdh7+v57xDuCHnfrSIh+0ElyMADWmQB2InW4jNvqH6/p3DfUMmsTYzyuvwxEa4gfUuQkgt91dji3vtezuEkoL1M41rQjs4wDdrmNW7Izq0D0YeijcA1+QcnjVV8y2zvGn8I4ZmkiyCOBIkW3ktwnXsMu9E67EfvQzN2Vc/Oa343JcsbZ3lrWO+HhQrXOGX7IIRGuyjhUVnffwd2o7V411kg+Ei1svll2vR45LA4E4ZOiU1OxoG/obU9dEUJlp9Oor3TwGB7Xd9xc3ip4zLFP2b3Rv275p+DXvghy5sJLxHNd5Um4LxqcVk413ob036Tw2LMpoXqOGdxw3JblTeP8nIbnu7N3r4+AWJgrHmc6rrEbW9vW+l8V2e2rft6e0G1XDYxNm9prXS3n+ckxp6mMibhcsgh75tFL9Gd+EGV0OQ6h8XrNu3hW9HdwwzGf1e2rDWq+9robeoL5mFnGo8nLY8pW7a3TqWt9rYfOBXfr/S1+O6zvc0wjM7fJ3Dr+Z45OAbHc6Te3kGciu9XTrN9L/DfDou06u0nJiYcdyTFiq7r2NzcbNgc9iumkcvl4GSKxaLVXOMDSV9Ni8Xn83l5eslJsJ5sNms9jcUR/kTwyUuPx0P/ieyrc3ixcDh8QYtGo2k+kUgDcfQHMdIrn7c1Zbf6gUQ+lzeF4+U41tkKaftWqVSW2OE88A980mAdiYPK4QAAAABJRU5ErkJggg=="/>
+</defs>
+  </svg>
+);

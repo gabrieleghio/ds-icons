@@ -1,0 +1,21 @@
+import { html } from 'lit';
+import { unsafeHTML } from 'lit/directives/unsafe-html.js';
+import type { IconProps } from '../../types';
+
+export const renderCirclePauseController24 = ({
+  color = 'currentColor',
+  className,
+}: IconProps) =>
+  html`<svg viewBox="0 0 24 24" width="24" height="24"
+       fill="${color}" class="${className ?? ''}" aria-hidden="true" focusable="false">
+    ${unsafeHTML(`<g clip-path="url(#clip0_2055_1693)">
+<path d="M11.9202 23.5C5.44016 23.5 0.160156 18.23 0.160156 11.75C0.160156 5.27 5.44016 0 11.9202 0C18.4002 0 23.6802 5.27 23.6802 11.75C23.6802 18.23 18.4102 23.5 11.9202 23.5ZM11.9202 1.51C6.27016 1.51 1.68016 6.1 1.68016 11.75C1.68016 17.4 6.27016 22 11.9202 22C17.5702 22 22.1602 17.4 22.1602 11.75C22.1602 6.1 17.5702 1.51 11.9202 1.51Z" fill="black"/>
+<path d="M9.17016 18.09C8.75016 18.09 8.41016 17.75 8.41016 17.33V6.17C8.41016 5.75 8.75016 5.41 9.17016 5.41C9.59016 5.41 9.92016 5.75 9.92016 6.17V17.34C9.92016 17.76 9.58016 18.1 9.17016 18.1V18.09Z" fill="black"/>
+<path d="M14.6702 18.09C14.2502 18.09 13.9202 17.75 13.9202 17.33V6.17C13.9202 5.75 14.2602 5.41 14.6702 5.41C15.0802 5.41 15.4302 5.75 15.4302 6.17V17.34C15.4302 17.76 15.0902 18.1 14.6702 18.1V18.09Z" fill="black"/>
+</g>
+<defs>
+<clipPath id="clip0_2055_1693">
+<rect width="24" height="24" fill="white"/>
+</clipPath>
+</defs>`)}
+  </svg>`;

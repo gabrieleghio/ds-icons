@@ -1,0 +1,20 @@
+import { html } from 'lit';
+import { unsafeHTML } from 'lit/directives/unsafe-html.js';
+import type { IconProps } from '../../types';
+
+export const renderShieldSecureInsuranceCheckValidated16 = ({
+  color = 'currentColor',
+  className,
+}: IconProps) =>
+  html`<svg viewBox="0 0 16 16" width="16" height="16"
+       fill="${color}" class="${className ?? ''}" aria-hidden="true" focusable="false">
+    ${unsafeHTML(`<g clip-path="url(#clip0_2055_1736)">
+<path d="M7.5 15.81C5.79 15.81 4.12 14.14 2.78 11.11C1.7 8.65 1 5.66 1 3.48C1 3.16 1.26 2.9 1.58 2.9C3.31 2.9 5.95 1.31 7.09 0.17C7.2 0.06 7.35 0 7.5 0C7.65 0 7.8 0.06 7.91 0.17C9.05 1.31 11.69 2.9 13.42 2.9C13.75 2.9 14.01 3.16 14.01 3.48C14.01 5.66 13.31 8.65 12.23 11.11C10.89 14.14 9.21 15.81 7.51 15.81H7.5ZM2.17 4.01C2.28 5.98 2.93 8.55 3.84 10.63C4.96 13.18 6.29 14.64 7.5 14.64C8.71 14.64 10.03 13.18 11.16 10.63C12.08 8.56 12.72 5.98 12.83 4.01C11.05 3.77 8.85 2.53 7.5 1.37C6.15 2.53 3.95 3.77 2.18 4.01H2.17Z" fill="black"/>
+<path d="M6.59 10.3C6.43 10.3 6.29 10.24 6.18 10.13L4.37 8.32C4.26 8.21 4.2 8.06 4.2 7.91C4.2 7.76 4.26 7.61 4.37 7.5C4.48 7.39 4.62 7.33 4.78 7.33C4.94 7.33 5.08 7.39 5.19 7.5L6.59 8.9L9.81 5.68C9.92 5.57 10.07 5.51 10.22 5.51C10.37 5.51 10.52 5.57 10.63 5.68C10.74 5.79 10.8 5.94 10.8 6.09C10.8 6.24 10.74 6.39 10.63 6.5L7 10.13C6.89 10.24 6.74 10.3 6.59 10.3Z" fill="black"/>
+</g>
+<defs>
+<clipPath id="clip0_2055_1736">
+<rect width="16" height="16" fill="white"/>
+</clipPath>
+</defs>`)}
+  </svg>`;

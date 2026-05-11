@@ -1,0 +1,13 @@
+import { html } from 'lit';
+import { unsafeHTML } from 'lit/directives/unsafe-html.js';
+import type { IconProps } from '../../types';
+
+export const renderSelectAllMultiselect20 = ({
+  color = 'currentColor',
+  className,
+}: IconProps) =>
+  html`<svg viewBox="0 0 20 20" width="20" height="20"
+       fill="${color}" class="${className ?? ''}" aria-hidden="true" focusable="false">
+    ${unsafeHTML(`<path d="M15.53 5.76V3.9C15.53 2.85 14.68 2 13.64 2H3.9C2.85 2 2 2.85 2 3.9V14.18C2 15.23 2.85 16.08 3.9 16.08H13.65C14.7 16.08 15.55 15.23 15.55 14.18L15.53 5.76ZM3.9 14.82C3.54 14.82 3.26 14.53 3.26 14.18V3.9C3.26 3.55 3.54 3.26 3.9 3.26H13.64C13.99 3.26 14.27 3.55 14.27 3.9V5.76L14.29 14.18C14.29 14.53 14.01 14.82 13.65 14.82H3.9Z" fill="#010101"/>
+<path d="M18.03 6.4C18.03 5.35 17.18 4.5 16.14 4.5H15.53V5.76H16.14C16.49 5.76 16.77 6.05 16.77 6.4V6.82L16.79 16.69C16.79 17.04 16.51 17.33 16.15 17.33H6.4C6.04 17.33 5.76 17.04 5.76 16.69V16.09H4.5V16.69C4.5 17.74 5.35 18.59 6.4 18.59H16.15C17.2 18.59 18.05 17.74 18.05 16.69L18.03 6.41V6.4Z" fill="#010101"/>`)}
+  </svg>`;

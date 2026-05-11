@@ -1,0 +1,19 @@
+import React from 'react';
+import type { IconProps } from '../../../types';
+
+export const DJ48 = ({
+  color = 'currentColor',
+  className,
+  style,
+}: IconProps) => (
+  <svg viewBox="0 0 63 45" width={63} height={45}
+       fill={color} className={className} style={style} aria-hidden="true" focusable="false">
+    <rect width="63" height="45" fill="url(#pattern0_2055_4)"/>
+<defs>
+<pattern id="pattern0_2055_4" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlinkHref="#image0_2055_4" transform="scale(0.015873 0.0222222)"/>
+</pattern>
+<image id="image0_2055_4" width="63" height="45" preserveAspectRatio="none" xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD8AAAAtCAYAAAAZQbNPAAAACXBIWXMAACE4AAAhOAFFljFgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAPKSURBVHgB5ZpJTBNRHMa/GTGFAgVTEwEVAY8iwpEEFNDEGJeTYqIxLCdvHDwZPEAi8USExGhEEZe4nozCwYsgEHCJInAQUCwgKWqAgpS2bB3fG5kubDNTSjuv/pJm5i3TvO/9//O9vulwWKSwriPWibASAUIOKeYgxODAfYbAVd0vTr3nriOMjIwkPf8y1dg26EhC6DOwCQu5d4syBkTxZrPZRA5JFvsCbn6YhMXuRIhDJyCDI1EvFAShTqqNjo7Gu58cGvrssM2HxiQIghPzMw7M2abcdU6hnCNR7yDn6bTCYDAgMjJSbByzLaC+dxrtPxwIFebsVvKZlopNVLwgleLi4sBxnNcF7UN21PdNk8lgPwtIhsNu+e0q856NS4VTMhMjUHrAiLwUPVhnqT5eyUX6zRzyU6NQccgIo17RJUygSolRv4lMwFac2hMFfRj7k+CTgoO79SjN2YLMneFgGZ/DR7OgIMOAgvRoZm+FdY+aZUP0S8hYNUS/jpQ1Q9yQEbJiiD6JH7tSIduHBUNUPSp7SzMRfxk2clSClg1RtfhRIpyiJPoSWjVEVSOhUbe3tvw7b21WHH0JrRmi164uPj5+WYf5wUHMdHdidmgIluvXMD806GrT7U2D4ew5hJMjHxMDXdo+KCVYW2bb+C/X+arirfUvYT6TD7XsaHgFffZ+xf0DvWX2FL9q7kUdO45tN2qghjjSX41wSjANcc0bL4akNJ0APiYWa34JaafC6S3gC5Ih0qUxkITJdaATsDlxF4aPHl61T8Ljp9BnqYu4J7Y5Qbz/X3+3IZDIiqdwMu3U7HylafQtij5dwIBtGAFBWHCdKlpvZj0cfsX2ri6ohYrNbT0tfgImfAnKxHe7xUVkZSPh0TOyzLmXtZludeKr+2uR0XhEjHowUZT2jq5OUbTx4iWXm9PVYPLhA/GXnlxmSFCx5T1Xgy5aQvZHDsVa/4KIPbHql8i1T8z9EUVX9d9B0LG473lF4tdDwA1NDg/xitLeF6hYKlorKb4SGyKeGlpZT5WY7lrGr+K1Zmhy+EW8pgxNBesWrzlDU4HP4lkwNDl8Es+KocmhSjxrhiaHIvGsGpocXuLpmwtL/8Bn2dCWIXgX6a6uSSpYrVZXgxa2nH5n1lO90BFGov2GRDuHFql4nudxe+QJynrZNzQXJKNBHxI7PB+SctWcyWSK1el09I2spLbxj6j8dgvt5BjaCCYUm1P45OTkCRL53MqvNQMn35//P4TPOPPombe71W4vJDUlWHwvL5AjwsbTBIFrBm+tQtHEBK34Cxf7viQsAOFrAAAAAElFTkSuQmCC"/>
+</defs>
+  </svg>
+);

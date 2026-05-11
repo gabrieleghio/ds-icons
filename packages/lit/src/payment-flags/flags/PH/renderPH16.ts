@@ -1,0 +1,18 @@
+import { html } from 'lit';
+import { unsafeHTML } from 'lit/directives/unsafe-html.js';
+import type { IconProps } from '../../../types';
+
+export const renderPH16 = ({
+  color = 'currentColor',
+  className,
+}: IconProps) =>
+  html`<svg viewBox="0 0 23 16" width="23" height="16"
+       fill="${color}" class="${className ?? ''}" aria-hidden="true" focusable="false">
+    ${unsafeHTML(`<rect width="22.4" height="16" fill="url(#pattern0_2072_2158)"/>
+<defs>
+<pattern id="pattern0_2072_2158" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlink:href="#image0_2072_2158" transform="scale(0.015873 0.0222222)"/>
+</pattern>
+<image id="image0_2072_2158" width="63" height="45" preserveAspectRatio="none" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD8AAAAtCAYAAAAZQbNPAAAACXBIWXMAACE4AAAhOAFFljFgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAOWSURBVHgB5ZpBTBNBFIb/WQUaGpty0RRNbE1IvBjwpp6oUSMn5UQ8SRMNekIj0aNUozelJJ40sRjTcPDgwRsxUjx4M0VMCGJMi4EioKFgS5uWdpzZuu220u4WMOwOX7KdN7OzTf++92amLyVQcPrtsK33gtJ2ELRDPMYByYeJKy+UAcJf5ufnnac870bD0YQT4hNBOuvG1PWILD4ajYZX4xnno8A0nr0OYxcQgVR3nDCvd1NK/cpoYGQRD/xhxOLrEAZK2ZUGsmvqQS9hXg8xq413bTYbrFYrItE1uK+NsTYBocil2BeQzNsUQQl/hXMaGxvl1tnciFDgDG5caoFQSA1Fmy3qkvoeIaRg2/fVYeBWq3xxWwxISU/Sms69HwqcZdFghWhoiueImga6xHNETAPd4hVESoOaxXNESYOK4umCF7nPRG43QoQ04IccqnQcDkfhBheuIB2jVd/EVIeizHLBrOh5cuBuSVsNs6ZBRc9vFt/wV3ifTiL2OwNDosfzG5IcB02NV51ipt2gJvG5OQ9o9KbmPLOkgX7x6YjseSSCeVsDM+wG+sVnIgVTK/TVGDkNdIunyU/FTnYFtWDUNKi82mdjoD8H817m4Z6LyWMFLKwMsMcOYrvIrgtAvbNwix+M6GI/yP7+f7bKHd8NVKt95UPOF5eu3Japc0I6Wqz9aR2Qgh+X4O4Zw46gZ6uTXKMgDh9gbc97WbKrbtplweBeZ56VWkIlz1Y7IA0yz3f2fYAR0H3IoctDoLOe/EOHhkCaLqMWsrFVLDwcwNKT59hJlmi2YO/V/dSepqJdfxi1kJ6ZxbfzXXJrJHSv9sTSWrR5yOtk+eUrTJ/sMJxwjn7P89Wc5z9f8VUreyWMEubV0C+eQZoHQKj2PO7lSNdVJCcmYWRqE29p05zDw3zuzj3Z80Zn05WccrjY6G0vvvf0mUI4Z1sqOWYJc456q9tyJUdZzc0gvJwtVXJ4mBt5Nd+IzR1yVJgpzKtRc91+5c2IacO8nJo8b8Ywr4Yu8aKEeTmaYS9SmJdT4nlKackfFEQL8/LTCvd8UOnE43G55WE+faJDKOGcFFXJpzQkMW8X6klc/OLbMUwJFuY55vMEEx5nlgKL8EESDoftDQ0NvA7l/HH/MX75hyE6FDR8LhU9Irlcrhj7Ftwznt7IbhGeRe40t0v+njRiOdjNfq/3slHt367b/Zn+P0Em933cEvd1xmJyDf4P2qTFb4Fp84IAAAAASUVORK5CYII="/>
+</defs>`)}
+  </svg>`;

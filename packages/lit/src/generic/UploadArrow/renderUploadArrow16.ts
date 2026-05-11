@@ -1,0 +1,22 @@
+import { html } from 'lit';
+import { unsafeHTML } from 'lit/directives/unsafe-html.js';
+import type { IconProps } from '../../types';
+
+export const renderUploadArrow16 = ({
+  color = 'currentColor',
+  className,
+}: IconProps) =>
+  html`<svg viewBox="0 0 16 16" width="16" height="16"
+       fill="${color}" class="${className ?? ''}" aria-hidden="true" focusable="false">
+    ${unsafeHTML(`<g clip-path="url(#clip0_2055_613)">
+<path d="M1.58 15.38C1.26 15.38 1 15.12 1 14.8V11.42C1 11.1 1.26 10.84 1.58 10.84C1.9 10.84 2.16 11.1 2.16 11.42V14.22H14.22V11.42C14.22 11.1 14.48 10.84 14.8 10.84C15.12 10.84 15.38 11.1 15.38 11.42V14.8C15.38 15.12 15.12 15.38 14.8 15.38H1.58Z" fill="black"/>
+<path d="M8.19 12.01C7.87 12.01 7.61 11.75 7.61 11.43V1.58C7.61 1.26 7.87 1 8.19 1C8.51 1 8.77 1.26 8.77 1.58V11.42C8.77 11.74 8.51 12 8.19 12V12.01Z" fill="black"/>
+<path d="M4.71 5.64C4.55 5.64 4.41 5.58 4.3 5.47C4.07 5.24 4.07 4.87 4.3 4.65L7.78 1.17C7.89 1.06 8.04 1 8.19 1C8.34 1 8.49 1.06 8.6 1.17C8.71 1.28 8.77 1.43 8.77 1.58C8.77 1.73 8.71 1.88 8.6 1.99L5.12 5.47C5.01 5.58 4.86 5.64 4.71 5.64Z" fill="black"/>
+<path d="M11.67 5.64C11.51 5.64 11.37 5.58 11.26 5.47L7.78 1.99C7.67 1.88 7.61 1.73 7.61 1.58C7.61 1.43 7.67 1.28 7.78 1.17C7.89 1.06 8.03 1 8.19 1C8.35 1 8.49 1.06 8.6 1.17L12.08 4.65C12.19 4.76 12.25 4.91 12.25 5.06C12.25 5.21 12.19 5.36 12.08 5.47C11.97 5.58 11.83 5.64 11.67 5.64Z" fill="black"/>
+</g>
+<defs>
+<clipPath id="clip0_2055_613">
+<rect width="16" height="16" fill="white"/>
+</clipPath>
+</defs>`)}
+  </svg>`;

@@ -1,8 +1,9 @@
-import * as fs from 'fs';
-import * as path from 'path';
+import * as fs from "fs";
+import * as path from "path";
+import { sanitizeName } from "./utils/sanitize-name";
 
-const DEFAULT_RAW_DIR = path.join(__dirname, '../raw');
-const DEFAULT_OUTPUT_DIR = path.join(__dirname, '../packages/lit/src');
+const DEFAULT_RAW_DIR = path.join(__dirname, "../raw");
+const DEFAULT_OUTPUT_DIR = path.join(__dirname, "../packages/lit/src");
 
 export interface SVGFile {
   category: string;
@@ -13,68 +14,93 @@ export interface SVGFile {
 
 function getSVGFiles(rawDir: string): SVGFile[] {
   const files: SVGFile[] = [];
-  const categoryDirs = fs.readdirSync(rawDir);
 
-  for (const category of categoryDirs) {
-    const categoryPath = path.join(rawDir, category);
-    if (!fs.statSync(categoryPath).isDirectory()) continue;
+  function scan(dir: string, parts: string[]): void {
+    const entries = fs.readdirSync(dir);
+    const svgFiles = entries.filter((f) => f.endsWith(".svg"));
 
-    const iconDirs = fs.readdirSync(categoryPath);
-    for (const iconName of iconDirs) {
-      const iconDir = path.join(categoryPath, iconName);
-      if (!fs.statSync(iconDir).isDirectory()) continue;
-
-      const svgFiles = fs.readdirSync(iconDir).filter(f => f.endsWith('.svg'));
+    if (svgFiles.length > 0 && parts.length >= 2) {
+      const name = sanitizeName(parts[parts.length - 1]);
+      const category = parts.slice(0, -1).join("/");
       for (const svgFile of svgFiles) {
         const match = svgFile.match(/^(.+?)_(\d+)\.svg$/);
         if (match) {
           files.push({
             category,
-            name: iconName,
+            name,
             size: match[2],
-            fullPath: path.join(iconDir, svgFile),
+            fullPath: path.join(dir, svgFile),
           });
         }
       }
     }
+
+    for (const entry of entries) {
+      const entryPath = path.join(dir, entry);
+      if (fs.statSync(entryPath).isDirectory()) {
+        scan(entryPath, [...parts, entry]);
+      }
+    }
   }
 
+  scan(rawDir, []);
   return files;
 }
 
-export function extractSVGContent(svgContent: string): { viewBox: string; width: string; height: string; inner: string } {
-  const match = svgContent.match(
-    /<svg[^>]*viewBox="([^"]*)"[^>]*width="([^"]*)"[^>]*height="([^"]*)"[^>]*>(.*?)<\/svg>/s
-  );
+export function extractSVGContent(svgContent: string): {
+  viewBox: string;
+  width: string;
+  height: string;
+  inner: string;
+} {
+  const svgTagMatch = svgContent.match(/<svg([^>]*)>(.*?)<\/svg>/s);
+  if (!svgTagMatch) {
+    throw new Error("Could not parse SVG structure");
+  }
 
-  if (!match) {
-    throw new Error('Could not parse SVG structure');
+  const attrs = svgTagMatch[1];
+  const inner = svgTagMatch[2];
+
+  const viewBoxMatch = attrs.match(/viewBox="([^"]*)"/);
+  const widthMatch = attrs.match(/width="([^"]*)"/);
+  const heightMatch = attrs.match(/height="([^"]*)"/);
+
+  if (!viewBoxMatch || !widthMatch || !heightMatch) {
+    throw new Error("Could not parse SVG structure");
   }
 
   return {
-    viewBox: match[1],
-    width: match[2],
-    height: match[3],
-    inner: match[4].trim(),
+    viewBox: viewBoxMatch[1],
+    width: widthMatch[1],
+    height: heightMatch[1],
+    inner: inner.trim(),
   };
 }
 
 export function escapeLitTemplate(str: string): string {
-  return str.replace(/\\/g, '\\\\').replace(/`/g, '\\`').replace(/\$/g, '\\$');
+  return str.replace(/\\/g, "\\\\").replace(/`/g, "\\`").replace(/\$/g, "\\$");
 }
 
-export function generateLitRenderFunction(svgFile: SVGFile, svgContent: string): string {
+export function generateLitRenderFunction(
+  svgFile: SVGFile,
+  svgContent: string,
+): string {
   const functionName = `render${svgFile.name}${svgFile.size}`;
 
   const { viewBox, width, height, inner } = extractSVGContent(svgContent);
 
   // Remove hardcoded fill="currentColor" from child elements so parent fill applies
-  const cleanedInner = inner.replace(/\s+fill="currentColor"/g, '');
+  const cleanedInner = inner.replace(/\s+fill="currentColor"/g, "");
   const escapedInner = escapeLitTemplate(cleanedInner);
+
+  // category may be "generic" (1 segment) or "brands/Oakley" (2 segments), etc.
+  // The component file sits one level below category, so depth = segments + 1
+  const depth = svgFile.category.split("/").length + 1;
+  const typesPath = "../".repeat(depth) + "types";
 
   return `import { html } from 'lit';
 import { unsafeHTML } from 'lit/directives/unsafe-html.js';
-import type { IconProps } from '../types';
+import type { IconProps } from '${typesPath}';
 
 export const ${functionName} = ({
   color = 'currentColor',
@@ -87,7 +113,10 @@ export const ${functionName} = ({
 `;
 }
 
-export function main(rawDir: string = DEFAULT_RAW_DIR, outputDir: string = DEFAULT_OUTPUT_DIR) {
+export function main(
+  rawDir: string = DEFAULT_RAW_DIR,
+  outputDir: string = DEFAULT_OUTPUT_DIR,
+) {
   const svgFiles = getSVGFiles(rawDir);
 
   if (!fs.existsSync(outputDir)) {
@@ -96,18 +125,26 @@ export function main(rawDir: string = DEFAULT_RAW_DIR, outputDir: string = DEFAU
 
   for (const svgFile of svgFiles) {
     try {
-      const categoryDir = path.join(outputDir, svgFile.category);
-      if (!fs.existsSync(categoryDir)) {
-        fs.mkdirSync(categoryDir, { recursive: true });
+      const iconDir = path.join(outputDir, svgFile.category, svgFile.name);
+      if (!fs.existsSync(iconDir)) {
+        fs.mkdirSync(iconDir, { recursive: true });
       }
 
-      const svgContent = fs.readFileSync(svgFile.fullPath, 'utf-8');
+      const svgContent = fs.readFileSync(svgFile.fullPath, "utf-8");
       const functionCode = generateLitRenderFunction(svgFile, svgContent);
-      const outputFile = path.join(categoryDir, `render${svgFile.name}${svgFile.size}.ts`);
-      fs.writeFileSync(outputFile, functionCode, 'utf-8');
-      console.log(`✓ Generated ${svgFile.category}/render${svgFile.name}${svgFile.size}`);
+      const outputFile = path.join(
+        iconDir,
+        `render${svgFile.name}${svgFile.size}.ts`,
+      );
+      fs.writeFileSync(outputFile, functionCode, "utf-8");
+      console.log(
+        `✓ Generated ${svgFile.category}/${svgFile.name}/render${svgFile.name}${svgFile.size}`,
+      );
     } catch (error) {
-      console.error(`✗ Failed to generate ${svgFile.category}/render${svgFile.name}${svgFile.size}:`, error);
+      console.error(
+        `✗ Failed to generate ${svgFile.category}/${svgFile.name}/render${svgFile.name}${svgFile.size}:`,
+        error,
+      );
       process.exit(1);
     }
   }
@@ -116,6 +153,6 @@ export function main(rawDir: string = DEFAULT_RAW_DIR, outputDir: string = DEFAU
 }
 
 // Only run main if this file is the entry point
-if (process.argv[1]?.endsWith('generate-lit.ts')) {
+if (process.argv[1]?.endsWith("generate-lit.ts")) {
   main();
 }

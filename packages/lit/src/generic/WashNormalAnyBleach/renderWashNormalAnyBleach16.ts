@@ -1,0 +1,12 @@
+import { html } from 'lit';
+import { unsafeHTML } from 'lit/directives/unsafe-html.js';
+import type { IconProps } from '../../types';
+
+export const renderWashNormalAnyBleach16 = ({
+  color = 'currentColor',
+  className,
+}: IconProps) =>
+  html`<svg viewBox="0 0 16 16" width="16" height="16"
+       fill="${color}" class="${className ?? ''}" aria-hidden="true" focusable="false">
+    ${unsafeHTML(`<path d="M15.45 14.08L8.86 1.33002C8.8 1.21002 8.71 1.13002 8.53 1.04002L8.37 1.00002H8.2C8.13 1.00002 8.07 1.03002 8 1.06002C7.87 1.12002 7.78 1.21002 7.72 1.33002L1.17 14.04C1.06 14.16 1 14.31 1 14.47C1 14.82 1.28 15.1 1.63 15.1H14.83C15.07 15.1 15.29 14.96 15.33 14.83C15.53 14.63 15.58 14.34 15.46 14.09L15.45 14.08ZM2.68 13.83L8.29 2.98002L13.9 13.83H2.68Z" fill="black"/>`)}
+  </svg>`;

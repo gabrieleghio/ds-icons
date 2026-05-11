@@ -1,0 +1,20 @@
+import React from 'react';
+import type { IconProps } from '../../types';
+
+export const SocialMediaXTwitter40 = ({
+  color = 'currentColor',
+  className,
+  style,
+}: IconProps) => (
+  <svg viewBox="0 0 40 40" width={40} height={40}
+       fill={color} className={className} style={style} aria-hidden="true" focusable="false">
+    <g clip-path="url(#clip0_2055_1411)">
+<path d="M0.0950019 1.3335L15.2208 21.5577L0 38.0002H3.42583L16.7517 23.6035L27.5183 38.0002H39.1758L23.1992 16.6393L37.3667 1.3335H33.9408L21.6683 14.5918L11.7525 1.3335H0.0950019ZM5.1325 3.856H10.4875L34.1367 35.476H28.7817L5.1325 3.856Z" fill="black"/>
+</g>
+<defs>
+<clipPath id="clip0_2055_1411">
+<rect width="40" height="40" fill="white"/>
+</clipPath>
+</defs>
+  </svg>
+);

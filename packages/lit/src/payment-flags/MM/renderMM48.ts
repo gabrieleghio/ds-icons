@@ -1,0 +1,18 @@
+import { html } from 'lit';
+import { unsafeHTML } from 'lit/directives/unsafe-html.js';
+import type { IconProps } from '../types';
+
+export const renderMM48 = ({
+  color = 'currentColor',
+  className,
+}: IconProps) =>
+  html`<svg viewBox="0 0 63 45" width="63" height="45"
+       fill="${color}" class="${className ?? ''}" aria-hidden="true" focusable="false">
+    ${unsafeHTML(`<rect width="63" height="45" fill="url(#pattern0_2055_4)"/>
+<defs>
+<pattern id="pattern0_2055_4" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlink:href="#image0_2055_4" transform="scale(0.015873 0.0222222)"/>
+</pattern>
+<image id="image0_2055_4" width="63" height="45" preserveAspectRatio="none" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD8AAAAtCAYAAAAZQbNPAAAACXBIWXMAACE4AAAhOAFFljFgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAANNSURBVHgB7ZpPTNNQHMe/LXVhww6Ui1s9LIbAiCFCRK8WL8ZEEzAeTYCLXgx4M9GDHIyGGwIx4aZevOnBg95ELkYIgvEfhsN22TDGP6QdG7rS53tIy5hDpPStSccneet7r3tdv7/v77UvawWskXiMuuoQ+gmBSpsqfAYBZkUBQ5FTuG/1Cexj4SliRMBzWo3B/yQFgo7IabplrfQzJFAZwi2SP3Nok6jrPaRAuBwCaoI0JQT4BjqVkV0GtCW7KxaoxhWJpnu/1ROu+SPcbzAjmS6TBiGTtftOiHTban0pVA1fU2SsKha2/JTqpRCL9ImoYHbFe0bkBrzEO/F7VSA6QO+tKrzCO/HRNdc9dN8b8cx1y3FZ9cx9b8RHi9z2yP3yiw/E/nbaI/elji8N6w1DAm9uHrmFzhL9U/WD6J3vBm+M74ZdL6vz0aCCzoNdJfcdqz++WsoJF6tlKQwlGEU8HEdTbTPkPTKtN0MJKf8cN9w+ilQ2hTQtc9pHWuag5zW6/QTd0OA2QtODBmI1pP3OY8EED7ePIM7ESjLcRjd0TH2dxPU313YUCC5pz05o8MNt8OTu/KirGeDqnGdpen6iC+lcCm7CjseOy47vJq5f8FL0RHtfdrsWgPTa8VIuB5TB5WrvVgB4Cmdwu9XtNAC8hTO43uetADiBt3AG90WO5vDqrOV18Ia7+LgchxPitc7GbQfu4tkKzwlOg7YduItXggqcEA05G7cd+Kd9uLSDU98m0Td9edOFy2bj/hf6PG7r8j7WYq/tD0h74Db7Xo9DkNfX+vlX08iNjMGgW4vAubMI9V2CqETsPqLp+HFUhdt8NvJ2navzQli2hZupNDJXB6BfuLhBOOPXoydYVM+s7jdTC/ZYUYmCJ1z/vaiKN4LoOnLDY1i+93DL77MgsGJlQlVz42rQeME17ZlzTDxLYScw952O3YzCtOfq/E5dc1t4MbuPqyqVXfGVygbxJvxNsT72ssK41ciaK/AzObNQPpkRV0BeWM0M3blEA2ASAj/B9GSoLr3AXBHiHWEm1loXwMoMKus9vMTh5NtDYltydlFEVQftSKIySFC9J1llw/tJ72ItPXQu9AsQWlFeuM8zAjJOf2TCgDTEDGd9vwFHpEN1hwzDkQAAAABJRU5ErkJggg=="/>
+</defs>`)}
+  </svg>`;

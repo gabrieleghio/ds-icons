@@ -1,0 +1,19 @@
+import { html } from 'lit';
+import { unsafeHTML } from 'lit/directives/unsafe-html.js';
+import type { IconProps } from '../../types';
+
+export const renderRulerFittingSizeMeasure32 = ({
+  color = 'currentColor',
+  className,
+}: IconProps) =>
+  html`<svg viewBox="0 0 32 32" width="32" height="32"
+       fill="${color}" class="${className ?? ''}" aria-hidden="true" focusable="false">
+    ${unsafeHTML(`<g clip-path="url(#clip0_2055_1250)">
+<path d="M1.82 22.4498C1.37 22.4498 1 22.0798 1 21.6298V9.6198C1 9.1698 1.37 8.7998 1.82 8.7998H30.26C30.71 8.7998 31.08 9.1698 31.08 9.6198V21.6298C31.08 22.0798 30.71 22.4498 30.26 22.4498H1.82ZM2.63 20.8698L29.49 20.8198L29.44 10.3998L25.34 10.4498L25.39 14.7998C25.39 15.2498 25.02 15.6198 24.57 15.6198C24.12 15.6198 23.75 15.2498 23.75 14.7998V10.3998L19.64 10.4498L19.69 14.7998C19.69 15.2498 19.32 15.6198 18.87 15.6198C18.42 15.6198 18.05 15.2498 18.05 14.7998V10.3998L13.94 10.4498L13.99 14.7998C13.99 15.2498 13.62 15.6198 13.17 15.6198C12.72 15.6198 12.35 15.2498 12.35 14.7998V10.3998L8.24 10.4498L8.29 14.7998C8.29 15.2498 7.92 15.6198 7.47 15.6198C7.02 15.6198 6.65 15.2498 6.65 14.7998V10.3998L2.6 10.4498V20.8698H2.63Z" fill="black"/>
+</g>
+<defs>
+<clipPath id="clip0_2055_1250">
+<rect width="32" height="32" fill="white"/>
+</clipPath>
+</defs>`)}
+  </svg>`;

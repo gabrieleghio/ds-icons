@@ -1,0 +1,21 @@
+import { html } from 'lit';
+import { unsafeHTML } from 'lit/directives/unsafe-html.js';
+import type { IconProps } from '../../types';
+
+export const renderDeviceMobilePhone24 = ({
+  color = 'currentColor',
+  className,
+}: IconProps) =>
+  html`<svg viewBox="0 0 24 24" width="24" height="24"
+       fill="${color}" class="${className ?? ''}" aria-hidden="true" focusable="false">
+    ${unsafeHTML(`<g clip-path="url(#clip0_2055_702)">
+<path d="M7.26 22.3202C6.02 22.3202 5 21.3102 5 20.0602V3.26024C5 2.02024 6.01 1.00024 7.26 1.00024H15.91C17.15 1.00024 18.16 2.01024 18.16 3.26024V20.0702C18.16 21.3102 17.15 22.3302 15.91 22.3302H7.26V22.3202ZM7.26 2.51024C6.85 2.51024 6.52 2.84024 6.52 3.26024V20.0702C6.52 20.4802 6.85 20.8202 7.26 20.8202H15.91C16.32 20.8202 16.65 20.4902 16.65 20.0702V3.26024C16.65 2.85024 16.32 2.51024 15.91 2.51024H7.26Z" fill="black"/>
+<path d="M10.9 4.75024C10.48 4.75024 10.15 4.41024 10.15 3.99024C10.15 3.57024 10.49 3.24024 10.9 3.24024H12.27C12.69 3.24024 13.02 3.58024 13.02 3.99024C13.02 4.40024 12.68 4.75024 12.27 4.75024H10.9Z" fill="black"/>
+<path d="M11.59 20.0402C12.2141 20.0402 12.72 19.5343 12.72 18.9102C12.72 18.2862 12.2141 17.7802 11.59 17.7802C10.9659 17.7802 10.46 18.2862 10.46 18.9102C10.46 19.5343 10.9659 20.0402 11.59 20.0402Z" fill="black"/>
+</g>
+<defs>
+<clipPath id="clip0_2055_702">
+<rect width="24" height="24" fill="white"/>
+</clipPath>
+</defs>`)}
+  </svg>`;

@@ -1,0 +1,18 @@
+import { html } from 'lit';
+import { unsafeHTML } from 'lit/directives/unsafe-html.js';
+import type { IconProps } from '../../../types';
+
+export const renderTG48 = ({
+  color = 'currentColor',
+  className,
+}: IconProps) =>
+  html`<svg viewBox="0 0 63 45" width="63" height="45"
+       fill="${color}" class="${className ?? ''}" aria-hidden="true" focusable="false">
+    ${unsafeHTML(`<rect width="63" height="45" fill="url(#pattern0_2055_4)"/>
+<defs>
+<pattern id="pattern0_2055_4" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlink:href="#image0_2055_4" transform="scale(0.015873 0.0222222)"/>
+</pattern>
+<image id="image0_2055_4" width="63" height="45" preserveAspectRatio="none" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD8AAAAtCAYAAAAZQbNPAAAACXBIWXMAACE4AAAhOAFFljFgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAKpSURBVHgB7ZrNaxNBGId/s9m0aU1NlLZYQQmioIdCPPQmNHoTBHsS0YNFQSwI6bH+BXqMXuJJ6KWIp+pBj7FizxU8emjpwQ+UaqBoY2LGeafubhKazWwx2czuPiFkZvIBz7zzleFl+EcpnU2b9YF8nfMcGHLoAtPXj8I3GN6B8wKKLxadJkjxjFGPl0Qxgy7iq7zDBjg7j8fLGwbVeiHeR2TAeAnzM2mzNDI1iwbxAyyGIRjiwfDfSQ7BFzgHan+AStVqyWCnPm8aDHmrJSnEhxFD4GAikHFztxN+16y2aRr2WeszCRgINNQBDrkmW9Whnrp2EVrCmv08h5rEx+/nYaSS0B3P8qMLNxET4ofnrkB3TC8fpqjHj0/I8iEhv1V8hnp5W/n7/MZT+M2nr05ZKfJGagSDk6dk1C0o+mOiTu26wlYOTnGrMs4G7DdIdPjcWRHpI3a03dh5/0GOgi/3HqEiyntxenUVfqMU+fLSSymtIk4kxAj4+XatrXg/0la+uvkZm5fuylcVvj14Ip864TrnVTtAR3Gi44JH4t/Fqu7GVof3+xWl1d4Ui54bqutCv6Ekn2jZzlr39oSm253SIceSox2A5jZNBTrwjC7cklvh4ORJlZ8BW7wK39n+ZRc7ytMZnvZwkqatzKK89Eo+qRPoPKAjbQ853eDM7WPwnYbIB/wPvDuRfFiJ5MOKp8sMndnrdpJ9LMHe6ibGEHg83+QElUg+rETyYSWSDyvaHnI49kfj9xjmLjt1v5IHekn0f36XSN6G73cmaUKLH8m/tmvVGgINJSU5rBngbMWuUrIOdUDQRoBMRKo2ZmMJ2ENG+WiocLqTziA8rKP4/ISBwvIPmZFImYnhYF34XqBC8wXHnZlZME55eVn0lu7PM05rG3uDBAoy4IK/jDbL3VFIQ9AAAAAASUVORK5CYII="/>
+</defs>`)}
+  </svg>`;

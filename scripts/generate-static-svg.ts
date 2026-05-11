@@ -1,9 +1,10 @@
-import * as fs from 'fs';
-import * as path from 'path';
-import { optimize } from 'svgo';
+import * as fs from "fs";
+import * as path from "path";
+import { optimize } from "svgo";
+import { sanitizeName } from "./utils/sanitize-name";
 
-const DEFAULT_RAW_DIR = path.join(__dirname, '../raw');
-const DEFAULT_OUTPUT_DIR = path.join(__dirname, '../packages/core/dist/svg');
+const DEFAULT_RAW_DIR = path.join(__dirname, "../raw");
+const DEFAULT_OUTPUT_DIR = path.join(__dirname, "../packages/core/dist/svg");
 
 export interface SVGFile {
   name: string;
@@ -13,31 +14,28 @@ export interface SVGFile {
 
 function getSVGFiles(rawDir: string): SVGFile[] {
   const files: SVGFile[] = [];
-  const categoryDirs = fs.readdirSync(rawDir);
 
-  for (const category of categoryDirs) {
-    const categoryPath = path.join(rawDir, category);
-    if (!fs.statSync(categoryPath).isDirectory()) continue;
-
-    const iconDirs = fs.readdirSync(categoryPath);
-    for (const iconName of iconDirs) {
-      const iconDir = path.join(categoryPath, iconName);
-      if (!fs.statSync(iconDir).isDirectory()) continue;
-
-      const svgFiles = fs.readdirSync(iconDir).filter(f => f.endsWith('.svg'));
-      for (const svgFile of svgFiles) {
-        const match = svgFile.match(/^(.+?)_(\d+)\.svg$/);
-        if (match) {
-          files.push({
-            name: iconName,
-            size: match[2],
-            fullPath: path.join(iconDir, svgFile),
-          });
-        }
+  function scan(dir: string): void {
+    const entries = fs.readdirSync(dir);
+    for (const svgFile of entries.filter((f) => f.endsWith(".svg"))) {
+      const match = svgFile.match(/^(.+?)_(\d+)\.svg$/);
+      if (match) {
+        files.push({
+          name: sanitizeName(match[1]),
+          size: match[2],
+          fullPath: path.join(dir, svgFile),
+        });
+      }
+    }
+    for (const entry of entries) {
+      const entryPath = path.join(dir, entry);
+      if (fs.statSync(entryPath).isDirectory()) {
+        scan(entryPath);
       }
     }
   }
 
+  scan(rawDir);
   return files;
 }
 
@@ -45,7 +43,7 @@ export function optimizeSVG(svgContent: string): string {
   const result = optimize(svgContent, {
     plugins: [
       {
-        name: 'preset-default',
+        name: "preset-default",
         params: {
           overrides: {
             removeViewBox: false,
@@ -58,7 +56,10 @@ export function optimizeSVG(svgContent: string): string {
   return result.data;
 }
 
-export function main(rawDir: string = DEFAULT_RAW_DIR, outputDir: string = DEFAULT_OUTPUT_DIR) {
+export function main(
+  rawDir: string = DEFAULT_RAW_DIR,
+  outputDir: string = DEFAULT_OUTPUT_DIR,
+) {
   const svgFiles = getSVGFiles(rawDir);
 
   if (!fs.existsSync(outputDir)) {
@@ -67,13 +68,19 @@ export function main(rawDir: string = DEFAULT_RAW_DIR, outputDir: string = DEFAU
 
   for (const svgFile of svgFiles) {
     try {
-      const svgContent = fs.readFileSync(svgFile.fullPath, 'utf-8');
+      const svgContent = fs.readFileSync(svgFile.fullPath, "utf-8");
       const optimizedContent = optimizeSVG(svgContent);
-      const outputFile = path.join(outputDir, `${svgFile.name}_${svgFile.size}.svg`);
-      fs.writeFileSync(outputFile, optimizedContent, 'utf-8');
+      const outputFile = path.join(
+        outputDir,
+        `${svgFile.name}_${svgFile.size}.svg`,
+      );
+      fs.writeFileSync(outputFile, optimizedContent, "utf-8");
       console.log(`✓ Optimized ${svgFile.name}_${svgFile.size}`);
     } catch (error) {
-      console.error(`✗ Failed to optimize ${svgFile.name}_${svgFile.size}:`, error);
+      console.error(
+        `✗ Failed to optimize ${svgFile.name}_${svgFile.size}:`,
+        error,
+      );
       process.exit(1);
     }
   }
@@ -82,6 +89,6 @@ export function main(rawDir: string = DEFAULT_RAW_DIR, outputDir: string = DEFAU
 }
 
 // Only run main if this file is the entry point
-if (process.argv[1]?.endsWith('generate-static-svg.ts')) {
+if (process.argv[1]?.endsWith("generate-static-svg.ts")) {
   main();
 }

@@ -8,7 +8,7 @@ export const TargetOpticalFastDelivery48 = ({
 }: IconProps) => (
   <svg viewBox="0 0 48 48" width={48} height={48}
        fill={color} className={className} style={style} aria-hidden="true" focusable="false">
-<g clip-path="url(#clip0_2055_4)">
+    <g clip-path="url(#clip0_2055_4)">
 <path d="M4.05 36.4498H31.5L27.5 6.99982H0.05L4.05 36.4498Z" fill="#CEAF8D"/>
 <path d="M48.05 31.0698L42.13 18.9898H29.13L31.5 36.4698H48.05V31.0698Z" fill="#CC0000"/>
 <path d="M35.34 27.3298L34.48 22.2698H40.01L42.22 27.3298H35.34Z" fill="white"/>

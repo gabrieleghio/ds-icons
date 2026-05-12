@@ -223,7 +223,7 @@ pnpm --filter @gabrieleghio/icons-core publish
 
 **Current Versions:**
 
-- React: 0.0.5
+- React: 0.0.7
 - Lit: 0.0.5
 - Core: 0.0.2
 

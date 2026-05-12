@@ -8,7 +8,7 @@ export const LocationGeolocalizationPointer48 = ({
 }: IconProps) => (
   <svg viewBox="0 0 48 48" width={48} height={48}
        fill={color} className={className} style={style} aria-hidden="true" focusable="false">
-<g clip-path="url(#clip0_2055_4)">
+    <g clip-path="url(#clip0_2055_4)">
 <path d="M23.5 13.86C22.95 13.86 22.5 13.41 22.5 12.86V1C22.5 0.45 22.95 0 23.5 0C24.05 0 24.5 0.45 24.5 1V12.86C24.5 13.41 24.05 13.86 23.5 13.86Z"/>
 <path d="M23.5 47C22.95 47 22.5 46.55 22.5 46V34.14C22.5 33.59 22.95 33.14 23.5 33.14C24.05 33.14 24.5 33.59 24.5 34.14V46C24.5 46.55 24.05 47 23.5 47Z"/>
 <path d="M12.86 24.5H1C0.45 24.5 0 24.05 0 23.5C0 22.95 0.45 22.5 1 22.5H12.86C13.41 22.5 13.86 22.95 13.86 23.5C13.86 24.05 13.41 24.5 12.86 24.5Z"/>

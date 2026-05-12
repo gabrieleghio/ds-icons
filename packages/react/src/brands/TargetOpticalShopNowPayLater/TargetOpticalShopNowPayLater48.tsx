@@ -8,7 +8,7 @@ export const TargetOpticalShopNowPayLater48 = ({
 }: IconProps) => (
   <svg viewBox="0 0 48 48" width={48} height={48}
        fill={color} className={className} style={style} aria-hidden="true" focusable="false">
-<g clip-path="url(#clip0_2055_4)">
+    <g clip-path="url(#clip0_2055_4)">
 <path d="M44.0773 9H3.92266C1.75653 9 0 10.7565 0 12.9227V35.6228C0 37.7889 1.75653 39.5455 3.92266 39.5455H44.0773C46.2435 39.5455 48 37.7889 48 35.6228V12.9227C48 10.7565 46.2435 9 44.0773 9Z" fill="#CC0000"/>
 <path d="M44.0773 9H24V39.5455H44.0773C46.2435 39.5455 48 37.7889 48 35.6228V12.9227C48 10.7565 46.2435 9 44.0773 9Z" fill="#A60D0D"/>
 <path d="M5.5625 29.394H27.8105V31.2481H5.5625V29.394Z" fill="#D6D6D6"/>

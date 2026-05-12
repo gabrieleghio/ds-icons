@@ -8,7 +8,7 @@ export const TargetOpticalDocumentPrescriptionRX48 = ({
 }: IconProps) => (
   <svg viewBox="0 0 48 48" width={48} height={48}
        fill={color} className={className} style={style} aria-hidden="true" focusable="false">
-<g clip-path="url(#clip0_2055_4)">
+    <g clip-path="url(#clip0_2055_4)">
 <g clip-path="url(#clip1_2055_4)">
 <path d="M40.7285 15.1354V45H8V3H28.5931L40.7285 15.1354Z" fill="#D7D8D7"/>
 <path d="M33.7638 31.1751H14.9735C14.4069 31.1751 13.9434 30.7115 13.9434 30.1449C13.9434 29.5783 14.4069 29.1147 14.9735 29.1147H33.7638C34.3304 29.1147 34.794 29.5783 34.794 30.1449C34.794 30.7115 34.3304 31.1751 33.7638 31.1751Z" fill="#343434"/>

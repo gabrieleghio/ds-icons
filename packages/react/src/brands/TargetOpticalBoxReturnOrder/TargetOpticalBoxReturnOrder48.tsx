@@ -8,7 +8,7 @@ export const TargetOpticalBoxReturnOrder48 = ({
 }: IconProps) => (
   <svg viewBox="0 0 48 48" width={48} height={48}
        fill={color} className={className} style={style} aria-hidden="true" focusable="false">
-<path d="M24.16 24.05L24.1 39.2L11.79 33.16V18L24.08 11.91L36.41 18L24.1 24.05L11.79 18.11" fill="#CEAF8C"/>
+    <path d="M24.16 24.05L24.1 39.2L11.79 33.16V18L24.08 11.91L36.41 18L24.1 24.05L11.79 18.11" fill="#CEAF8C"/>
 <path d="M31.34 15.51L28.67 14.18L16.24 20.28L18.9 21.6L31.34 15.51Z" fill="#AA8763"/>
 <path d="M36.41 18V33.16L24.1 39.2L24.16 24.05L36.41 18Z" fill="#AA8763"/>
 <path d="M18.9 36.65V21.6L16.24 20.28V35.34L18.9 36.65Z" fill="#AA8763"/>

@@ -8,7 +8,7 @@ export const TargetOpticalDocumentEdit48 = ({
 }: IconProps) => (
   <svg viewBox="0 0 48 48" width={48} height={48}
        fill={color} className={className} style={style} aria-hidden="true" focusable="false">
-<g clip-path="url(#clip0_2055_4)">
+    <g clip-path="url(#clip0_2055_4)">
 <path d="M36.6734 2H4.0646C3.47907 2 3 2.46843 3 3.0646V44.9354C3 45.5316 3.47907 46 4.0646 46H36.6734C37.2589 46 37.738 45.5316 37.738 44.9354V3.0646C37.738 2.46843 37.2589 2 36.6734 2Z" fill="#C5D0D5"/>
 <path d="M37.738 3.0646V44.9354C37.738 45.5316 37.2589 46 36.6734 46H20.0336V2H36.6734C37.2589 2 37.738 2.46843 37.738 3.0646Z" fill="#B0AEAE"/>
 <path d="M20.0336 2V46H4.0646C3.47907 46 3 45.5316 3 44.9354V3.0646C3 2.46843 3.47907 2 4.0646 2H20.0336Z" fill="#D6D6D6"/>

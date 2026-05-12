@@ -85,11 +85,17 @@ export function generateReactComponent(
 ): string {
   const componentName = `${svgFile.name}${svgFile.size}`;
 
-  // Remove hardcoded fill="currentColor" from child elements so parent fill applies
-  // Also replace xlink:href with xlinkHref for React JSX compatibility
+  // Remove the Figma artboard grid path (stroke="#9747FF") — it's a Figma
+  // layout artifact that should never appear in generated components.
+  // Remove hardcoded fill="currentColor" and fill="black" from child elements
+  // so they inherit the color from the parent SVG fill={color} prop.
+  // Also replace xlink:href with xlinkHref for React JSX compatibility.
   const cleanedInner = svg.inner
+    .replace(/<path[^>]*stroke="#9747FF"[^>]*\/>/g, "")
     .replace(/\s+fill="currentColor"/g, "")
-    .replace(/xlink:href=/g, "xlinkHref=");
+    .replace(/\s+fill="black"/g, "")
+    .replace(/xlink:href=/g, "xlinkHref=")
+    .trim();
 
   // category may be "generic" (1 segment) or "brands/Oakley" (2 segments), etc.
   // The component file sits one level below category, so depth = segments + 1

@@ -1,6 +1,6 @@
 {
   "name": "@gabrieleghio/icons-react",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "React component library for @gabrieleghio/icons",
   "author": "gabrieleghio",
   "license": "MIT",
@@ -16,13 +16,14 @@
     "svg",
     "design-system"
   ],
-  "main": "./dist/index.js",
+  "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "type": "module",
   "exports": {
     ".": {
       "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
       "types": "./dist/index.d.ts"
     },
     "./types": {

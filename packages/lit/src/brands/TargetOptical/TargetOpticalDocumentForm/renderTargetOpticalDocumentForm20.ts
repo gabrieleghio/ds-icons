@@ -1,5 +1,5 @@
 import { html } from 'lit';
-import { unsafeHTML } from 'lit/directives/unsafe-html.js';
+import { unsafeSVG } from 'lit/directives/unsafe-svg.js';
 import type { IconProps } from '../../../types';
 
 export const renderTargetOpticalDocumentForm20 = ({
@@ -8,7 +8,7 @@ export const renderTargetOpticalDocumentForm20 = ({
 }: IconProps) =>
   html`<svg viewBox="0 0 20 20" width="20" height="20"
        fill="${color}" class="${className ?? ''}" aria-hidden="true" focusable="false">
-    ${unsafeHTML(`<g clip-path="url(#clip0_7215_278)">
+    ${unsafeSVG(`<g clip-path="url(#clip0_7215_278)">
 <path d="M15.7755 1H2.43552C2.19598 1 2 1.19163 2 1.43552V15.8643C2 17.1926 2.83184 18.3337 4.00339 18.7822L4.46068 18.9216C4.60876 18.9564 4.75684 18.9826 4.91362 18.9869C4.98766 18.9956 5.06605 19 5.14009 19H15.7755C16.015 19 16.211 18.8084 16.211 18.5645V1.43552C16.211 1.19163 16.015 1 15.7755 1Z" fill="#D6D6D6"/>
 <path d="M15.5534 19H4.91798C3.89015 18.9869 3.18897 18.3162 3.18897 18.3162C3.18897 18.3162 6.83862 19.196 7.18268 15.8643C7.20881 15.6247 7.37866 15.4287 7.6182 15.4287L18.2536 15.3852C18.3668 15.3852 18.48 15.4287 18.5628 15.5115C18.6455 15.5942 18.6891 15.7031 18.6891 15.8207C18.6891 17.5759 17.2824 19 15.5534 19Z" fill="#B0AEAE"/>
 <path d="M5.14009 19H4.91362V18.9869C4.98766 18.9956 5.06605 19 5.14009 19Z" fill="#8CA3AC"/>

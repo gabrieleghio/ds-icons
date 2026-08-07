@@ -1,5 +1,5 @@
 import { html } from 'lit';
-import { unsafeHTML } from 'lit/directives/unsafe-html.js';
+import { unsafeSVG } from 'lit/directives/unsafe-svg.js';
 import type { IconProps } from '../../types';
 
 export const renderSocialMediaFacebook32 = ({
@@ -8,7 +8,7 @@ export const renderSocialMediaFacebook32 = ({
 }: IconProps) =>
   html`<svg viewBox="0 0 32 32" width="32" height="32"
        fill="${color}" class="${className ?? ''}" aria-hidden="true" focusable="false">
-    ${unsafeHTML(`<g clip-path="url(#clip0_2055_1437)">
+    ${unsafeSVG(`<g clip-path="url(#clip0_2055_1437)">
 <path d="M16 1C7.73 1 1 7.76 1 16.06C1 23.1 5.85 29.03 12.37 30.66V20.68H9.04V16.05H12.35V12.86C12.35 8.51 14.91 6.34 18.78 6.34C20.63 6.34 22.67 6.56 23.13 6.62V10.89H21.03C18.93 10.89 17.8 11.94 17.8 13.42V16.06H22.82L22.09 20.67L17.8 20.74V31.01C25.22 30.12 31 23.76 31 16.07C31 7.77 24.27 1.01 16 1.01V1Z" fill="#010101"/>
 </g>
 <defs>

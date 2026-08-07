@@ -89,8 +89,16 @@ export function generateLitRenderFunction(
 
   const { viewBox, width, height, inner } = extractSVGContent(svgContent);
 
-  // Remove hardcoded fill="currentColor" from child elements so parent fill applies
-  const cleanedInner = inner.replace(/\s+fill="currentColor"/g, "");
+  // Remove the Figma artboard grid path (stroke="#9747FF") — it's a Figma
+  // layout artifact that should never appear in generated components.
+  // Remove hardcoded fill="currentColor" and fill="black" from child elements
+  // so they inherit the color from the parent SVG's fill="${color}" attribute.
+  // (Mirrors generate-react.ts's cleanup — keep the two in sync.)
+  const cleanedInner = inner
+    .replace(/<path[^>]*stroke="#9747FF"[^>]*\/>/g, "")
+    .replace(/\s+fill="currentColor"/g, "")
+    .replace(/\s+fill="black"/g, "")
+    .trim();
   const escapedInner = escapeLitTemplate(cleanedInner);
 
   // category may be "generic" (1 segment) or "brands/Oakley" (2 segments), etc.
@@ -98,8 +106,14 @@ export function generateLitRenderFunction(
   const depth = svgFile.category.split("/").length + 1;
   const typesPath = "../".repeat(depth) + "types";
 
+  // unsafeSVG (not unsafeHTML) is required here: unsafeHTML parses its string
+  // with HTML parsing rules, which puts <g>/<path>/<defs>/<clipPath> etc. in
+  // the HTML namespace instead of the SVG namespace — the browser silently
+  // refuses to render them (they exist in the DOM as inert, non-rendering
+  // elements). unsafeSVG parses with SVG parsing rules, giving the correct
+  // http://www.w3.org/2000/svg namespace.
   return `import { html } from 'lit';
-import { unsafeHTML } from 'lit/directives/unsafe-html.js';
+import { unsafeSVG } from 'lit/directives/unsafe-svg.js';
 import type { IconProps } from '${typesPath}';
 
 export const ${functionName} = ({
@@ -108,7 +122,7 @@ export const ${functionName} = ({
 }: IconProps) =>
   html\`<svg viewBox="${viewBox}" width="${width}" height="${height}"
        fill="\${color}" class="\${className ?? ''}" aria-hidden="true" focusable="false">
-    \${unsafeHTML(\`${escapedInner}\`)}
+    \${unsafeSVG(\`${escapedInner}\`)}
   </svg>\`;
 `;
 }

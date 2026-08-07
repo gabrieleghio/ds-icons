@@ -1,5 +1,5 @@
 import { html } from 'lit';
-import { unsafeHTML } from 'lit/directives/unsafe-html.js';
+import { unsafeSVG } from 'lit/directives/unsafe-svg.js';
 import type { IconProps } from '../../../types';
 
 export const renderTargetOpticalCircleCard40 = ({
@@ -8,7 +8,7 @@ export const renderTargetOpticalCircleCard40 = ({
 }: IconProps) =>
   html`<svg viewBox="0 0 40 40" width="40" height="40"
        fill="${color}" class="${className ?? ''}" aria-hidden="true" focusable="false">
-    ${unsafeHTML(`<g clip-path="url(#clip0_5139_117)">
+    ${unsafeSVG(`<g clip-path="url(#clip0_5139_117)">
 <path d="M38.5076 7.09564H1.49244C0.668181 7.09564 0 7.76174 0 8.58342V30.8711C0 31.6928 0.668181 32.359 1.49244 32.359H38.5076C39.3318 32.359 40 31.6928 40 30.8711V8.58342C40 7.76174 39.3318 7.09564 38.5076 7.09564Z" fill="#F2452F"/>
 <path d="M11.6392 24.5751C11.3689 24.5751 11.1487 24.7944 11.1487 25.064C11.1487 25.3321 11.3689 25.5529 11.6392 25.5529C11.9095 25.5529 12.1297 25.3321 12.1297 25.064C12.1297 24.7959 11.9095 24.5751 11.6392 24.5751Z" fill="white"/>
 <path d="M12.0735 25.8827H11.2035V29.0439H12.0735V25.8827Z" fill="white"/>

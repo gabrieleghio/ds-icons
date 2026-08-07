@@ -1,5 +1,5 @@
 import { html } from 'lit';
-import { unsafeHTML } from 'lit/directives/unsafe-html.js';
+import { unsafeSVG } from 'lit/directives/unsafe-svg.js';
 import type { IconProps } from '../../../types';
 
 export const renderShopPay48 = ({
@@ -8,7 +8,7 @@ export const renderShopPay48 = ({
 }: IconProps) =>
   html`<svg viewBox="0 0 71 48" width="71" height="48"
        fill="${color}" class="${className ?? ''}" aria-hidden="true" focusable="false">
-    ${unsafeHTML(`<rect x="0.2" y="0.2" width="69.6444" height="47.6" rx="1.8" fill="white"/>
+    ${unsafeSVG(`<rect x="0.2" y="0.2" width="69.6444" height="47.6" rx="1.8" fill="white"/>
 <rect x="0.2" y="0.2" width="69.6444" height="47.6" rx="1.8" fill="url(#pattern0_2055_4)"/>
 <rect x="0.2" y="0.2" width="69.6444" height="47.6" rx="1.8" stroke="#D8D8D8" stroke-width="0.4"/>
 <defs>

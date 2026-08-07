@@ -81,10 +81,28 @@ describe('generateLitRenderFunction', () => {
     expect(code).not.toContain('fill="currentColor"/>');
   });
 
+  it('removes fill="black" from inner content (matches raw Figma exports)', () => {
+    const svg = `<svg viewBox="0 0 32 32" width="32" height="32">
+      <path d="M0 0" fill="black"/>
+      <path d="M5 5" fill="black"/>
+    </svg>`;
+    const code = generateLitRenderFunction(svgFile, svg);
+    expect(code).not.toContain('fill="black"/>');
+  });
+
+  it('removes the Figma artboard grid path (stroke="#9747FF")', () => {
+    const svg = `<svg viewBox="0 0 32 32" width="32" height="32">
+      <path d="M0 0h32v32H0z" fill="black"/>
+      <path stroke="#9747FF" d="M0 0L32 32"/>
+    </svg>`;
+    const code = generateLitRenderFunction(svgFile, svg);
+    expect(code).not.toContain('9747FF');
+  });
+
   it('includes correct imports', () => {
     const code = generateLitRenderFunction(svgFile, FIXTURE_SVG);
     expect(code).toContain("import { html } from 'lit'");
-    expect(code).toContain("import { unsafeHTML } from 'lit/directives/unsafe-html.js'");
+    expect(code).toContain("import { unsafeSVG } from 'lit/directives/unsafe-svg.js'");
     expect(code).toContain("import type { IconProps } from '../types'");
   });
 
@@ -98,9 +116,9 @@ describe('generateLitRenderFunction', () => {
     expect(code).toContain('class="${className ?? \'\'}"');
   });
 
-  it('wraps inner content with unsafeHTML', () => {
+  it('wraps inner content with unsafeSVG (not unsafeHTML, which puts SVG child elements in the wrong namespace)', () => {
     const code = generateLitRenderFunction(svgFile, FIXTURE_SVG);
-    expect(code).toContain('${unsafeHTML(');
+    expect(code).toContain('${unsafeSVG(');
   });
 
   it('includes accessibility attributes', () => {
@@ -139,7 +157,7 @@ describe('generateLitRenderFunction', () => {
     </svg>`;
     const code = generateLitRenderFunction(svgFile, complexSvg);
     expect(code).toContain('renderHome32');
-    expect(code).toContain('${unsafeHTML(');
+    expect(code).toContain('${unsafeSVG(');
     expect(code).not.toContain('fill="currentColor"/>');
   });
 

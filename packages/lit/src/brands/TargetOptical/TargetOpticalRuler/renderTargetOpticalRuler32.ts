@@ -1,5 +1,5 @@
 import { html } from 'lit';
-import { unsafeHTML } from 'lit/directives/unsafe-html.js';
+import { unsafeSVG } from 'lit/directives/unsafe-svg.js';
 import type { IconProps } from '../../../types';
 
 export const renderTargetOpticalRuler32 = ({
@@ -8,7 +8,7 @@ export const renderTargetOpticalRuler32 = ({
 }: IconProps) =>
   html`<svg viewBox="0 0 32 32" width="32" height="32"
        fill="${color}" class="${className ?? ''}" aria-hidden="true" focusable="false">
-    ${unsafeHTML(`<path d="M30.1421 10H1.85795C1.38412 10 1 10.3841 1 10.8579V21.1041C1 21.5779 1.38412 21.962 1.85795 21.962H30.1421C30.6159 21.962 31 21.5779 31 21.1041V10.8579C31 10.3841 30.6159 10 30.1421 10Z" fill="#CC0000"/>
+    ${unsafeSVG(`<path d="M30.1421 10H1.85795C1.38412 10 1 10.3841 1 10.8579V21.1041C1 21.5779 1.38412 21.962 1.85795 21.962H30.1421C30.6159 21.962 31 21.5779 31 21.1041V10.8579C31 10.3841 30.6159 10 30.1421 10Z" fill="#CC0000"/>
 <path d="M15.8242 21.962V10H30.1421C30.6203 10 31 10.3868 31 10.8579V21.097C31 21.5752 30.6132 21.955 30.1421 21.955H15.8242V21.962Z" fill="#A60D0D"/>
 <path d="M7.52602 10.007V12.9044H6.11955V10.007H7.52602Z" fill="white"/>
 <path d="M13.5246 10.007V12.9044H12.1181V10.007H13.5246Z" fill="white"/>

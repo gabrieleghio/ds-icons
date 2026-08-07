@@ -1,5 +1,5 @@
 import { html } from 'lit';
-import { unsafeHTML } from 'lit/directives/unsafe-html.js';
+import { unsafeSVG } from 'lit/directives/unsafe-svg.js';
 import type { IconProps } from '../../../types';
 
 export const renderTargetOpticalFastDelivery40 = ({
@@ -8,7 +8,7 @@ export const renderTargetOpticalFastDelivery40 = ({
 }: IconProps) =>
   html`<svg viewBox="0 0 40 40" width="40" height="40"
        fill="${color}" class="${className ?? ''}" aria-hidden="true" focusable="false">
-    ${unsafeHTML(`<g clip-path="url(#clip0_7458_277)">
+    ${unsafeSVG(`<g clip-path="url(#clip0_7458_277)">
 <path d="M3.37484 29.5416H26.2498L22.9165 4.99994H0.0415039L3.37484 29.5416Z" fill="#CEAF8D"/>
 <path d="M40.0416 25.0583L35.1082 14.9916H24.2749L26.2499 29.5583H40.0416V25.0583Z" fill="#CC0000"/>
 <path d="M29.4496 21.9416L28.7329 17.725H33.3412L35.1829 21.9416H29.4496Z" fill="white"/>

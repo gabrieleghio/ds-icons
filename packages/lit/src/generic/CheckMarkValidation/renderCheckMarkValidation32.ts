@@ -1,5 +1,5 @@
 import { html } from 'lit';
-import { unsafeHTML } from 'lit/directives/unsafe-html.js';
+import { unsafeSVG } from 'lit/directives/unsafe-svg.js';
 import type { IconProps } from '../../types';
 
 export const renderCheckMarkValidation32 = ({
@@ -8,8 +8,8 @@ export const renderCheckMarkValidation32 = ({
 }: IconProps) =>
   html`<svg viewBox="0 0 32 32" width="32" height="32"
        fill="${color}" class="${className ?? ''}" aria-hidden="true" focusable="false">
-    ${unsafeHTML(`<g clip-path="url(#clip0_2055_680)">
-<path d="M11.62 25.24C11.4 25.24 11.2 25.16 11.04 25L2.24 16.2C2.08 16.05 2 15.84 2 15.62C2 15.4 2.08 15.2 2.24 15.04C2.39 14.89 2.6 14.8 2.82 14.8C3.04 14.8 3.24 14.88 3.4 15.04L11.66 23.3L28.64 6.24C28.79 6.09 29 6 29.22 6C29.44 6 29.64 6.08 29.8 6.24C29.96 6.39 30.04 6.6 30.04 6.82C30.04 7.04 29.96 7.24 29.8 7.4L12.2 25C12.05 25.15 11.84 25.24 11.62 25.24Z" fill="black"/>
+    ${unsafeSVG(`<g clip-path="url(#clip0_2055_680)">
+<path d="M11.62 25.24C11.4 25.24 11.2 25.16 11.04 25L2.24 16.2C2.08 16.05 2 15.84 2 15.62C2 15.4 2.08 15.2 2.24 15.04C2.39 14.89 2.6 14.8 2.82 14.8C3.04 14.8 3.24 14.88 3.4 15.04L11.66 23.3L28.64 6.24C28.79 6.09 29 6 29.22 6C29.44 6 29.64 6.08 29.8 6.24C29.96 6.39 30.04 6.6 30.04 6.82C30.04 7.04 29.96 7.24 29.8 7.4L12.2 25C12.05 25.15 11.84 25.24 11.62 25.24Z"/>
 </g>
 <defs>
 <clipPath id="clip0_2055_680">

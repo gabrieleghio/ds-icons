@@ -47,7 +47,7 @@ describe('generate-lit integration', () => {
     const content = fs.readFileSync(componentPath, 'utf-8');
     expect(content).toContain('export const renderTestIcon32');
     expect(content).toContain("import { html } from 'lit'");
-    expect(content).toContain("import { unsafeHTML } from 'lit/directives/unsafe-html.js'");
+    expect(content).toContain("import { unsafeSVG } from 'lit/directives/unsafe-svg.js'");
     expect(content).toContain('fill="${color}"');
   });
 

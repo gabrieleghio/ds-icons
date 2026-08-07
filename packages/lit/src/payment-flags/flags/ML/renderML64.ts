@@ -1,5 +1,5 @@
 import { html } from 'lit';
-import { unsafeHTML } from 'lit/directives/unsafe-html.js';
+import { unsafeSVG } from 'lit/directives/unsafe-svg.js';
 import type { IconProps } from '../../../types';
 
 export const renderML64 = ({
@@ -8,7 +8,7 @@ export const renderML64 = ({
 }: IconProps) =>
   html`<svg viewBox="0 0 269 192" width="269" height="192"
        fill="${color}" class="${className ?? ''}" aria-hidden="true" focusable="false">
-    ${unsafeHTML(`<rect width="269" height="192" fill="url(#pattern0_2126_3410)"/>
+    ${unsafeSVG(`<rect width="269" height="192" fill="url(#pattern0_2126_3410)"/>
 <defs>
 <pattern id="pattern0_2126_3410" patternContentUnits="objectBoundingBox" width="1" height="1">
 <use xlink:href="#image0_2126_3410" transform="scale(0.00371747 0.00520833)"/>

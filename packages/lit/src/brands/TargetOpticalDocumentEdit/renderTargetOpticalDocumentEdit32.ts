@@ -1,5 +1,5 @@
 import { html } from 'lit';
-import { unsafeHTML } from 'lit/directives/unsafe-html.js';
+import { unsafeSVG } from 'lit/directives/unsafe-svg.js';
 import type { IconProps } from '../../types';
 
 export const renderTargetOpticalDocumentEdit32 = ({
@@ -8,7 +8,7 @@ export const renderTargetOpticalDocumentEdit32 = ({
 }: IconProps) =>
   html`<svg viewBox="0 0 32 32" width="32" height="32"
        fill="${color}" class="${className ?? ''}" aria-hidden="true" focusable="false">
-    ${unsafeHTML(`<g clip-path="url(#clip0_7215_265)">
+    ${unsafeSVG(`<g clip-path="url(#clip0_7215_265)">
 <path d="M24.9591 1H2.72587C2.32664 1 2 1.31938 2 1.72587V30.2741C2 30.6806 2.32664 31 2.72587 31H24.9591C25.3583 31 25.685 30.6806 25.685 30.2741V1.72587C25.685 1.31938 25.3583 1 24.9591 1Z" fill="#C5D0D5"/>
 <path d="M25.685 1.72587V30.2741C25.685 30.6806 25.3583 31 24.9591 31H13.6138V1H24.9591C25.3583 1 25.685 1.31938 25.685 1.72587Z" fill="#B0AEAE"/>
 <path d="M13.6138 1V31H2.72587C2.32664 31 2 30.6806 2 30.2741V1.72587C2 1.31938 2.32664 1 2.72587 1H13.6138Z" fill="#D6D6D6"/>

@@ -1,5 +1,5 @@
 import { html } from 'lit';
-import { unsafeHTML } from 'lit/directives/unsafe-html.js';
+import { unsafeSVG } from 'lit/directives/unsafe-svg.js';
 import type { IconProps } from '../../types';
 
 export const renderPlus20 = ({
@@ -8,9 +8,9 @@ export const renderPlus20 = ({
 }: IconProps) =>
   html`<svg viewBox="0 0 18 18" width="18" height="18"
        fill="${color}" class="${className ?? ''}" aria-hidden="true" focusable="false">
-    ${unsafeHTML(`<g clip-path="url(#clip0_2055_286)">
-<path d="M8.9998 17.9996C8.61769 17.9996 8.30596 17.6879 8.30596 17.3058V0.69384C8.30596 0.311725 8.61769 0 8.9998 0C9.38192 0 9.69364 0.311725 9.69364 0.69384V17.3058C9.69364 17.6879 9.38192 17.9996 8.9998 17.9996Z" fill="black"/>
-<path d="M0.69384 9.69364C0.311725 9.69364 0 9.38192 0 8.9998C0 8.61769 0.311725 8.30596 0.69384 8.30596H17.3058C17.6879 8.30596 17.9996 8.61769 17.9996 8.9998C17.9996 9.38192 17.6879 9.69364 17.3058 9.69364H0.69384Z" fill="black"/>
+    ${unsafeSVG(`<g clip-path="url(#clip0_2055_286)">
+<path d="M8.9998 17.9996C8.61769 17.9996 8.30596 17.6879 8.30596 17.3058V0.69384C8.30596 0.311725 8.61769 0 8.9998 0C9.38192 0 9.69364 0.311725 9.69364 0.69384V17.3058C9.69364 17.6879 9.38192 17.9996 8.9998 17.9996Z"/>
+<path d="M0.69384 9.69364C0.311725 9.69364 0 9.38192 0 8.9998C0 8.61769 0.311725 8.30596 0.69384 8.30596H17.3058C17.6879 8.30596 17.9996 8.61769 17.9996 8.9998C17.9996 9.38192 17.6879 9.69364 17.3058 9.69364H0.69384Z"/>
 </g>
 <defs>
 <clipPath id="clip0_2055_286">

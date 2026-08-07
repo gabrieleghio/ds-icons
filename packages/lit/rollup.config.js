@@ -10,7 +10,11 @@ export default {
     preserveModulesRoot: "src",
     sourcemap: true,
   },
-  external: ["lit", "lit/directives/unsafe-html.js"],
+  // Regex form externalizes every `lit/...` subpath import (directives, decorators,
+  // etc.), not just the one directive in use today — avoids this silently breaking
+  // again (bundling `lit` internals into dist with a physical node_modules path)
+  // the next time a generator swaps which lit/directives/*.js it imports.
+  external: ["lit", /^lit\//],
   plugins: [
     nodeResolve(),
     typescript({
